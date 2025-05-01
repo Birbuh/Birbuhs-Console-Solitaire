@@ -1,40 +1,54 @@
 import curses
+
 # import asyncio
 import logging
-import time 
 
-from game import start_game
+# import time
+import sys
+
+from game import start_game, game
 
 
 ##################################################################
 # logging setup
-logging.basicConfig(filename="solitare.log", 
-                    encoding='utf-8', 
-                    filemode='a', 
-                    format="{asctime} - {levelname}: {message}", 
-                    style="{", 
-                    datefmt="%Y-%m-%d %H:%M",
-                    level=logging.DEBUG
-                    )
+logging.basicConfig(
+    filename="solitare.log",
+    encoding="utf-8",
+    filemode="a",
+    format="{asctime} - {levelname}: {message}",
+    style="{",
+    datefmt="%Y-%m-%d %H:%M",
+    level=logging.DEBUG,
+)
 ##################################################################
 
+logger = logging.getLogger()
 
-def main():
+
+def main(stdscr: curses.window):
     """Function running the program."""
-    stdscr = curses.initscr() # Initializing ncurses; window is now under ncurses supervision.
-    curses.noecho() # Making no echo from keypresses
-    curses.nocbreak() # React to keys instantly (without Enter)
-    stdscr.keypad(True) # Enabling special keys
+    # Setup
+    curses.mousemask(curses.ALL_MOUSE_EVENTS)
+    curses.curs_set(0)  # Hide cursor
+    stdscr.clear()
 
-    try:
-        start_game(stdscr)
-        time.sleep(10 + 1/3) # only for some time to prevent the program from ending immediately
-    finally:
-        # Restoring the terminal to the original state
-        curses.nocbreak()
-        stdscr.keypad(False)
-        curses.echo()
-        curses.endwin()
+    # Start the game flow
+    start_game(stdscr)
+    game(stdscr)
+
+    # Clean exit
+    stdscr.clear()
+    stdscr.addstr(10, 10, "Thanks for playing! Press any key to exit.")
+    stdscr.nodelay(False)  # Switch back to blocking mode for final input
+    stdscr.refresh()
+    stdscr.getch()
+
 
 if __name__ == "__main__":
-    main()
+    try:
+        curses.wrapper(main)
+    except KeyboardInterrupt:
+        sys.exit(0)
+    except Exception as e:
+        logger.error(f"An error occurred: {e}", exc_info=True)
+        sys.exit(1)
