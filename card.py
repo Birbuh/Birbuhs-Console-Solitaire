@@ -48,11 +48,15 @@ class Card:
         self.width = 8
         self.height = 6
         self.turned = False
+        self.is_active = False
 
-    def draw(self, x, y):
+    def draw(self, x, y, is_stockpile):
         self.x = x
         self.y = y
         if self.turned:
+            width = self.width
+            height = self.height
+        elif is_stockpile:
             width = self.width
             height = self.height
         else:
@@ -111,3 +115,22 @@ class Card:
             pass
         elif not self.turned:
             self.turned = True
+
+    def make_active(self, color_pair):
+        try:
+            logger.debug("IS IT WORKING?!?!!?!?!?!?")
+            self.is_active = True
+            for y in range(self.y + 1, self.y + self.height - 1):
+                for x in range(self.x + 1, self.x + self.width - 1):
+                    self.window.addch(y, x, " ", curses.color_pair(color_pair))
+                    logger.debug("IS IT WORKING?!?!!?!?!?!?")
+        except Exception as e:
+            logger.error(e)
+
+    def is_clicked(self, x, y):
+        return self.x <= x < self.x + self.width and self.y <= y < self.y + self.height
+
+    def may_move(self, other_card):
+        if self.num == other_card.num:
+            other_card.x = self.x
+            other_card.y = self.y + 3

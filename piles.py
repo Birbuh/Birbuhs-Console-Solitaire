@@ -20,7 +20,7 @@ class FoundationPile(Pile):
         self.window = window
         self.width = 8
         self.height = 6
-        self.x = window.getmaxyx[1] - 10
+        self.x = 112
         self.y = 5
         if color == CardColorEnum.HEARTS:
             self.x -= 30
@@ -40,7 +40,9 @@ class FoundationPile(Pile):
             self.window.addch(self.y, self.x, curses.ACS_ULCORNER)
             self.window.addch(self.y, self.x + self.width, curses.ACS_URCORNER)
             self.window.addch(self.y + self.height, self.x, curses.ACS_LLCORNER)
-            self.window.addch(self.y + self.height, self.x + self.width, curses.ACS_LRCORNER)
+            self.window.addch(
+                self.y + self.height, self.x + self.width, curses.ACS_LRCORNER
+            )
 
     def maybe_move(self, card: Card):
         try:
@@ -49,6 +51,11 @@ class FoundationPile(Pile):
         except IndexError:
             try:
                 if self.card_list:
+                    if self.is_empty():
+                        self.card_list.append(card)
+                        card.x = self.x
+                        card.y = self.y
+                        return True
                     _ = self.card_list[card.num - 1]
                 self.card_list.append(card)
                 card.x = self.x
@@ -67,23 +74,32 @@ class TableauPile(Pile):
 
 class Tableau:
     def __init__(self, cards: list[Card]):
+        self.cards = cards
+
+    def draw(self):
         self.piles = [TableauPile() for _ in range(7)]
         # Distribute cards to piles (pile 1 gets 1 card, pile 7 gets 7 cards)
         for pile_num in range(7, 0, -1):
             current_pile = self.piles[7 - pile_num]  # Convert 7→0, 6→1, etc.
 
             # Take first 'pile_num' cards from remaining deck
-            for i, card in enumerate(cards[:pile_num]):
+            for i, card in enumerate(self.cards[:pile_num]):
                 if i == pile_num - 1:  # Only top card is face-up
                     card.turned = True
                 # Position cards diagonally (adjust coordinates as needed)
-                card.draw(40 + (7 - pile_num) * 12, 5 + i * 2)
+                card.draw(40 + (7 - pile_num) * 12, 20 + i * 2, False)
                 current_pile.add_card(card)  # Add to current pile
 
             # Remove these cards from the main list
-            cards = cards[pile_num:]
+            cards = self.cards[pile_num:]
+
+        return cards
 
 
 class StockPile:
-    def __init__(self, card_list):
+    def __init__(self, card_list: list[Card]):
         self.card_list = card_list
+
+    def draw(self):
+        for card in self.card_list:
+            card.draw(40, 5, True)
