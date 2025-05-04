@@ -49,8 +49,10 @@ class Card:
         self.height = 6
         self.turned = False
         self.is_active = False
+        curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_RED)
 
     def draw(self, x, y, is_stockpile):
+        """Draws the card"""
         self.x = x
         self.y = y
         if self.turned:
@@ -63,19 +65,51 @@ class Card:
             width = self.width
             height = int(self.height / 2)
 
-        for i in range(width):
-            self.window.addch(self.y, self.x + i, curses.ACS_HLINE)
-            self.window.addch(self.y + height, self.x + i, curses.ACS_HLINE)
-        for i in range(height):
-            self.window.addch(self.y + i, self.x, curses.ACS_VLINE)
-            self.window.addch(self.y + i, self.x + width, curses.ACS_VLINE)
+        # Draw the card border safely with error handling
+        try:
+            # Draw horizontal lines
+            for i in range(width):
+                try:
+                    self.window.addch(self.y, self.x + i, curses.ACS_HLINE)
+                except curses.error:
+                    pass
+                try:
+                    self.window.addch(self.y + height, self.x + i, curses.ACS_HLINE)
+                except curses.error:
+                    pass
 
-        # Drawing the corners:
-        self.window.addch(self.y, self.x, curses.ACS_ULCORNER)
-        self.window.addch(self.y, self.x + width, curses.ACS_URCORNER)
-        self.window.addch(self.y + height, self.x, curses.ACS_LLCORNER)
-        self.window.addch(self.y + height, self.x + width, curses.ACS_LRCORNER)
+            # Draw vertical lines
+            for i in range(height):
+                try:
+                    self.window.addch(self.y + i, self.x, curses.ACS_VLINE)
+                except curses.error:
+                    pass
+                try:
+                    self.window.addch(self.y + i, self.x + width, curses.ACS_VLINE)
+                except curses.error:
+                    pass
 
+            # Drawing the corners:
+            try:
+                self.window.addch(self.y, self.x, curses.ACS_ULCORNER)
+            except curses.error:
+                pass
+            try:
+                self.window.addch(self.y, self.x + width, curses.ACS_URCORNER)
+            except curses.error:
+                pass
+            try:
+                self.window.addch(self.y + height, self.x, curses.ACS_LLCORNER)
+            except curses.error:
+                pass
+            try:
+                self.window.addch(self.y + height, self.x + width, curses.ACS_LRCORNER)
+            except curses.error:
+                pass
+        except Exception as e:
+            logger.error(f"Error drawing card border: {e}")
+
+        # Draw card content
         if self.turned:
             card_symbol = self.get_symbol()
             self.window.addstr(self.y + 1, self.x + 1, card_symbol)
@@ -83,7 +117,11 @@ class Card:
                 self.y + self.height - 1, self.x + self.width - 2, card_symbol
             )
         else:
-            self.window.addstr(self.y + 1, self.x + 1, "~~")
+            self.window.addstr(self.y + 1, self.x + 1, "~~~~~")
+            if not height == int(self.height / 2):
+                self.window.addstr(
+                    self.y + self.height - 1, self.x + self.width - 2, "~~"
+                )
 
     def get_symbol(self):
         """Returns a string representation of the card"""
@@ -111,26 +149,59 @@ class Card:
         return f"{num_symbol}{suit_symbol}"
 
     def turn(self):
+        """Turns the card up."""
         if self.turned:
             pass
         elif not self.turned:
             self.turned = True
 
-    def make_active(self, color_pair):
+    def activate(self):
+        """Makes the card active and marking it red"""
         try:
-            logger.debug("IS IT WORKING?!?!!?!?!?!?")
+            logger.debug("Making card active: %s", self.get_symbol())
             self.is_active = True
-            for y in range(self.y + 1, self.y + self.height - 1):
-                for x in range(self.x + 1, self.x + self.width - 1):
-                    self.window.addch(y, x, " ", curses.color_pair(color_pair))
-                    logger.debug("IS IT WORKING?!?!!?!?!?!?")
+            # Fill the card with colored background - safely
+            for y in range(self.y + 2, self.y + self.height - 1):
+                for x in range(self.x + 2, self.x + self.width - 1):
+                    try:
+                        self.window.addch(y, x, " ", curses.color_pair(2))
+                    except curses.error:
+                        pass
+
+            self.window.refresh()
         except Exception as e:
-            logger.error(e)
+            logger.error(e, exc_info=True)
+
+    def deactivate(self):
+        """Restoring the card to it's original state."""
+        try:
+            logger.debug(f"Deactivating the card {self.get_symbol()}")
+            self.is_active = False
+            # Clearing the red background
+            for y in range(self.y + 2, self.y + self.height - 1):
+                for x in range(self.x + 2, self.x + self.width - 1):
+                    try:
+                        self.window.addch(y, x, " ")  # Default color (black on white)
+                    except Exception as e:
+                        logger.error(e, exc_info=True)
+            # Redraw the card content to ensure it's visible
+            if self.turned:
+                card_symbol = self.get_symbol()
+                self.window.addstr(self.y + 1, self.x + 1, card_symbol)
+                self.window.addstr(
+                    self.y + self.height - 1, self.x + self.width - 2, card_symbol
+                )
+        except Exception as e:
+            logger.error(e, exc_info=True)
 
     def is_clicked(self, x, y):
-        return self.x <= x < self.x + self.width and self.y <= y < self.y + self.height
+        """Checking if the card is clicked"""
+        return (self.x <= x < (self.x + self.width)) and (
+            self.y <= y < (self.y + self.height)
+        )
 
     def may_move(self, other_card):
-        if self.num == other_card.num:
+        """Moves (if it's possible) the other card to the card the method is called on."""
+        if self.num == other_card.num.value - 1:
             other_card.x = self.x
             other_card.y = self.y + 3

@@ -25,23 +25,23 @@ logging.basicConfig(
 logger = logging.getLogger()
 
 
-def main(stdscr: curses.window):
+def main(window: curses.window):
     """Function running the program."""
     # Setup
     curses.mousemask(curses.ALL_MOUSE_EVENTS)
     curses.curs_set(0)  # Hide cursor
-    stdscr.clear()
+    window.clear()
 
     # Start the game flow
-    start_game(stdscr)
-    game(stdscr)
+    start_game(window)
+    game(window)
 
     # Clean exit
-    stdscr.clear()
-    stdscr.addstr(10, 10, "Thanks for playing! Press any key to exit.")
-    stdscr.nodelay(False)  # Switch back to blocking mode for final input
-    stdscr.refresh()
-    stdscr.getch()
+    window.clear()
+    window.addstr(10, 10, "Thanks for playing! Press any key to exit.")
+    window.nodelay(False)  # Switch back to blocking mode for final input
+    window.refresh()
+    window.getch()
 
 
 if __name__ == "__main__":
