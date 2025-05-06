@@ -1,4 +1,5 @@
 import curses
+import copy
 
 from card import Card, CardColorEnum
 
@@ -7,13 +8,24 @@ class Pile:
     """Parent pile class"""
 
     def __init__(self):
-        self.card_list = []
+        self.card_list: list[Card] = []
+        self.x = None
+        self.y = None
+        self.width = 8
+        self.height = 6
+
 
     def is_empty(self) -> bool:
         if self.card_list:
             return False
         else:
             return True
+
+    def is_clicked(self, x, y) -> bool:
+        """Checking for a click in the pile."""
+        return self.x <= x < (self.x + self.width) and self.y <= y < (
+            self.y + self.height
+        )
 
 
 class FoundationPile(Pile):
@@ -69,22 +81,21 @@ class FoundationPile(Pile):
             except IndexError:
                 return False
 
-    def is_clicked(self, x, y) -> bool:
-        """Checking for a click in the pile."""
-        return self.x <= x < (self.x + self.width) and self.y <= y < (
-            self.y + self.height
-        )
-
-
 class TableauPile(Pile):
     """Simple class for one of the 7 main piles."""
 
     def __init__(self):
         super().__init__()
 
-    def add_card(self, card):
-        """Adds a card to the pile."""
-        self.card_list.append(card)
+    def try_move_card(self, card: Card):
+        last_card = self.card_list[-1]
+        if card.num.value == last_card.num.value + 1 and (
+            (card.color_check() == "black" and last_card.color_check())
+        ):
+            self.card_list.append(card)
+            card.undraw()
+            card.draw(last_card.x, last_card.y + 4)
+        
 
 
 class Tableau:
@@ -103,24 +114,73 @@ class Tableau:
             # Take first 'pile_num' cards from remaining deck
             for i, card in enumerate(self.cards[:pile_num]):
                 if i == pile_num - 1:  # Only top card is face-up
-                    card.turned = True
-                # Position cards diagonally (adjust coordinates as needed)
-                card.draw(40 + (7 - pile_num) * 12, 20 + i * 2, False)
-                current_pile.add_card(card)  # Add to current pile
-
+                    card.draw(40 + (7 - pile_num) * 12, 20 + i * 2, False, True)
+                    current_pile.card_list.append(card)  # Add to current pile
+                else:
+                    # Position cards diagonally (adjust coordinates as needed)
+                    card.draw(40 + (7 - pile_num) * 12, 20 + i * 2)
+                    current_pile.card_list.append(card)  # Add to current pile
             # Remove these cards from the main list
             self.cards = self.cards[pile_num:]
 
-        return self.cards
+        return self.cards, self.piles
 
 
 class StockPile(Pile):
     """Pile in which you have the rest of the cards"""
 
     def __init__(self, card_list: list[Card]):
+        super().__init__()
         self.card_list = card_list
+        self.x = 40
+        self.y = 5
+        self.turned_card_list: list[Card] = []
+
 
     def draw(self):
         """Drawing..."""
         for card in self.card_list:
-            card.draw(40, 5, True)
+            card.draw(self.x, self.y, True)
+
+    def draw_empty(self, window: curses.window):
+            for i in range(self.width):
+                window.addch(self.y, self.x + i, curses.ACS_HLINE)
+                window.addch(self.y + self.height, self.x + i, curses.ACS_HLINE)
+            for i in range(self.height):
+                window.addch(self.y + i, self.x, curses.ACS_VLINE)
+                window.addch(self.y + i, self.x + self.width, curses.ACS_VLINE)
+            window.addch(self.y, self.x, curses.ACS_ULCORNER)
+            window.addch(self.y, self.x + self.width, curses.ACS_URCORNER)
+            window.addch(self.y + self.height, self.x, curses.ACS_LLCORNER)
+            window.addch(
+                self.y + self.height, self.x + self.width, curses.ACS_LRCORNER
+            )
+
+
+    def check_card(self, window: curses.window):
+        card = self.card_list[-1]
+        try: 
+            next_card = self.card_list[-2]
+        except IndexError:
+            next_card = None
+        try:
+            turned_card = self.turned_card_list[-1]
+        except IndexError:
+            turned_card = None
+        self.card_list.remove(card)
+        self.turned_card_list.append(card)
+        card.turn()
+        card.undraw()
+        if next_card:
+            next_card.draw(self.x, self.y, True, False)
+        else:
+            self.draw_empty(window)
+        if turned_card:
+            turned_card.undraw()
+        card.draw(card.x+10, card.y, True, True)
+        if not self.card_list: # Making the pile reset
+            for card in copy.deepcopy(self.turned_card_list):
+                card.undraw()
+                card.draw(40, 5, True, False)
+                self.card_list.append(card)
+                self.turned_card_list.remove(card)

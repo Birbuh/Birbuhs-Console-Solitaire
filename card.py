@@ -51,10 +51,12 @@ class Card:
         self.is_active = False
         curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_RED)
 
-    def draw(self, x, y, is_stockpile):
+    def draw(self, x:int=None, y:int=None, is_stockpile:bool=False, turned:bool=False):
         """Draws the card"""
-        self.x = x
-        self.y = y
+        self.turned = turned
+        if x and y:
+            self.x = x
+            self.y = y
         if self.turned:
             width = self.width
             height = self.height
@@ -122,6 +124,13 @@ class Card:
                 self.window.addstr(
                     self.y + self.height - 1, self.x + self.width - 2, "~~"
                 )
+        self.window.refresh()
+
+    def undraw(self):
+        for i in range(self.height + 1):
+            self.window.move(self.y + i, self.x)
+            self.window.addstr(" " * int(self.width+1))
+        self.window.refresh()
 
     def get_symbol(self):
         """Returns a string representation of the card"""
@@ -158,7 +167,7 @@ class Card:
     def activate(self):
         """Makes the card active and marking it red"""
         try:
-            logger.debug("Making card active: %s", self.get_symbol())
+            logger.debug(f"Activating the card: {self.get_symbol()}")
             self.is_active = True
             # Fill the card with colored background - safely
             for y in range(self.y + 2, self.y + self.height - 1):
@@ -194,14 +203,14 @@ class Card:
         except Exception as e:
             logger.error(e, exc_info=True)
 
-    def is_clicked(self, x, y):
+    def is_clicked(self, x, y) -> bool:
         """Checking if the card is clicked"""
         return (self.x <= x < (self.x + self.width)) and (
             self.y <= y < (self.y + self.height)
         )
 
-    def may_move(self, other_card):
-        """Moves (if it's possible) the other card to the card the method is called on."""
-        if self.num == other_card.num.value - 1:
-            other_card.x = self.x
-            other_card.y = self.y + 3
+    def color_check(self) -> str:
+        if self.color.value & 2 == 1:
+            return "black"
+        else:
+            return "red"
