@@ -2038,3 +2038,394 @@ Traceback (most recent call last):
     stock_pile.check_card()
     ~~~~~~~~~~~~~~~~~~~~~^^
 TypeError: StockPile.check_card() missing 1 required positional argument: 'window'
+2025-05-07 08:26 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 182, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-07 08:26 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 161, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-07 08:26 - DEBUG: Activating the card: A♠
+2025-05-07 08:26 - DEBUG: Activating the card: K♣
+2025-05-07 08:26 - DEBUG: Activating the card: 5♣
+2025-05-07 08:26 - DEBUG: Activating the card: 3♥
+2025-05-07 08:26 - DEBUG: Activating the card: Q♥
+2025-05-07 08:26 - DEBUG: Activating the card: A♥
+2025-05-07 08:26 - DEBUG: Activating the card: 2♦
+2025-05-07 08:26 - DEBUG: Activating the card: 3♦
+2025-05-07 08:26 - DEBUG: Activating the card: 5♠
+2025-05-07 08:26 - DEBUG: Activating the card: 9♥
+2025-05-07 08:26 - DEBUG: Activating the card: 3♠
+2025-05-07 08:26 - DEBUG: Activating the card: 2♠
+2025-05-07 08:26 - DEBUG: Activating the card: 6♥
+2025-05-07 08:26 - DEBUG: Activating the card: 2♥
+2025-05-07 08:26 - DEBUG: Activating the card: A♦
+2025-05-07 08:26 - DEBUG: Activating the card: A♣
+2025-05-07 08:26 - DEBUG: Activating the card: 4♦
+2025-05-07 08:26 - DEBUG: Activating the card: K♥
+2025-05-07 08:26 - DEBUG: Activating the card: 8♠
+2025-05-07 08:26 - DEBUG: Activating the card: J♦
+2025-05-07 08:26 - DEBUG: Activating the card: K♦
+2025-05-07 08:26 - DEBUG: Activating the card: J♣
+2025-05-07 08:26 - DEBUG: Activating the card: 5♦
+2025-05-07 08:26 - DEBUG: Activating the card: 4♣
+2025-05-07 08:26 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 161, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-07 08:26 - DEBUG: Deactivating the card A♠
+2025-05-07 08:26 - DEBUG: Deactivating the card K♣
+2025-05-07 08:26 - DEBUG: Deactivating the card 5♣
+2025-05-07 08:26 - DEBUG: Deactivating the card 3♥
+2025-05-07 08:27 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 182, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-07 08:27 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 161, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-07 08:27 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 161, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-07 08:27 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 161, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-07 08:27 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 161, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-07 08:27 - DEBUG: Activating the card: 4♦
+2025-05-07 08:27 - DEBUG: Activating the card: 3♠
+2025-05-07 08:27 - DEBUG: Activating the card: 3♦
+2025-05-07 08:27 - DEBUG: Activating the card: K♠
+2025-05-07 08:27 - DEBUG: Activating the card: 3♥
+2025-05-07 08:27 - DEBUG: Activating the card: 10♠
+2025-05-07 08:27 - DEBUG: Activating the card: 10♦
+2025-05-07 08:27 - DEBUG: Activating the card: A♥
+2025-05-07 08:27 - DEBUG: Activating the card: 4♠
+2025-05-07 08:27 - DEBUG: Activating the card: J♠
+2025-05-07 08:27 - DEBUG: Activating the card: 2♦
+2025-05-07 08:27 - DEBUG: Activating the card: 7♥
+2025-05-07 08:27 - DEBUG: Activating the card: 2♠
+2025-05-07 08:27 - DEBUG: Activating the card: 6♠
+2025-05-07 08:27 - DEBUG: Activating the card: 10♥
+2025-05-07 08:27 - DEBUG: Activating the card: J♣
+2025-05-07 08:27 - DEBUG: Activating the card: K♦
+2025-05-07 08:27 - DEBUG: Activating the card: 4♣
+2025-05-07 08:27 - DEBUG: Activating the card: Q♦
+2025-05-07 08:27 - DEBUG: Activating the card: 6♣
+2025-05-07 08:27 - DEBUG: Activating the card: 7♣
+2025-05-07 08:27 - DEBUG: Activating the card: 9♣
+2025-05-07 08:27 - DEBUG: Activating the card: 2♥
+2025-05-07 08:27 - DEBUG: Activating the card: 8♣
+2025-05-07 08:27 - DEBUG: Deactivating the card 4♦
+2025-05-07 08:27 - DEBUG: Deactivating the card 3♠
+2025-05-07 08:27 - DEBUG: Deactivating the card 3♦
+2025-05-07 08:27 - DEBUG: Deactivating the card K♠
+2025-05-07 08:39 - DEBUG: Activating the card: 4♣
+2025-05-07 08:39 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 77, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:39 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 77, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:40 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 77, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:40 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 185, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-07 08:40 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 164, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-07 08:40 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 158, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 164, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-07 08:40 - DEBUG: Activating the card: 2♦
+2025-05-07 08:40 - DEBUG: Activating the card: 5♣
+2025-05-07 08:40 - DEBUG: Activating the card: A♦
+2025-05-07 08:40 - DEBUG: Activating the card: 9♣
+2025-05-07 08:40 - DEBUG: Activating the card: 2♥
+2025-05-07 08:40 - DEBUG: Activating the card: 9♦
+2025-05-07 08:40 - DEBUG: Activating the card: 6♥
+2025-05-07 08:40 - DEBUG: Activating the card: K♣
+2025-05-07 08:40 - DEBUG: Activating the card: 5♠
+2025-05-07 08:40 - DEBUG: Activating the card: 8♠
+2025-05-07 08:40 - DEBUG: Activating the card: K♦
+2025-05-07 08:40 - DEBUG: Activating the card: 7♣
+2025-05-07 08:40 - DEBUG: Activating the card: 8♥
+2025-05-07 08:40 - DEBUG: Activating the card: 6♦
+2025-05-07 08:40 - DEBUG: Activating the card: 4♣
+2025-05-07 08:40 - DEBUG: Activating the card: Q♦
+2025-05-07 08:40 - DEBUG: Activating the card: 9♠
+2025-05-07 08:40 - DEBUG: Activating the card: 10♠
+2025-05-07 08:40 - DEBUG: Activating the card: 3♠
+2025-05-07 08:40 - DEBUG: Activating the card: 5♥
+2025-05-07 08:40 - DEBUG: Activating the card: 3♥
+2025-05-07 08:40 - DEBUG: Activating the card: A♥
+2025-05-07 08:40 - DEBUG: Activating the card: 10♣
+2025-05-07 08:40 - DEBUG: Activating the card: 7♦
+2025-05-07 08:40 - DEBUG: Activating the card: A♣
+2025-05-07 08:40 - DEBUG: Activating the card: J♠
+2025-05-07 08:40 - DEBUG: Activating the card: 9♦
+2025-05-07 08:40 - DEBUG: Activating the card: K♣
+2025-05-07 08:40 - DEBUG: Deactivating the card A♣
+2025-05-07 08:40 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 77, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:48 - ERROR: An error occurred: 'float' object cannot be interpreted as an integer
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/main.py", line 49, in <module>
+    curses.wrapper(main)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/main.py", line 37, in main
+    game(window)
+    ~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 79, in game
+    foundation_hearts.draw()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 74, in draw
+    self.window.addstr(self.x + self.width/2 -1, self.y + self.height - 1, suit_symbol)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+2025-05-07 08:49 - ERROR: An error occurred: addwstr() returned ERR
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/main.py", line 49, in <module>
+    curses.wrapper(main)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/main.py", line 37, in main
+    game(window)
+    ~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 79, in game
+    foundation_hearts.draw()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 74, in draw
+    self.window.addstr(int(self.x + self.width/2 -1), int(self.y + self.height - 1), suit_symbol)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_curses.error: addwstr() returned ERR
+2025-05-07 08:53 - DEBUG: Activating the card: A♥
+2025-05-07 08:53 - DEBUG: Activating the card: 2♣
+2025-05-07 08:53 - DEBUG: Activating the card: 5♥
+2025-05-07 08:53 - DEBUG: Deactivating the card A♥
+2025-05-07 08:53 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:53 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:53 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:54 - DEBUG: Activating the card: 2♣
+2025-05-07 08:54 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:54 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 08:54 - DEBUG: Activating the card: A♥
+2025-05-07 08:54 - DEBUG: Deactivating the card A♥

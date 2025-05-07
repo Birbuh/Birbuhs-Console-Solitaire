@@ -1,6 +1,7 @@
 import curses
 import copy
 
+from enum import Enum
 from card import Card, CardColorEnum
 
 
@@ -44,6 +45,7 @@ class FoundationPile(Pile):
             self.x -= 20
         elif color == CardColorEnum.CLUBS:
             self.x -= 10
+        self.color = color
 
     def draw(self):
         """Draws the Foundation piles."""
@@ -60,26 +62,38 @@ class FoundationPile(Pile):
             self.window.addch(
                 self.y + self.height, self.x + self.width, curses.ACS_LRCORNER
             )
+        if self.color == CardColorEnum.HEARTS:
+            suit_symbol = "♥"
+        elif self.color == CardColorEnum.DIAMONDS:
+            suit_symbol = "♦"
+        elif self.color == CardColorEnum.CLUBS:
+            suit_symbol = "♣"
+        else:  # SPADES
+            suit_symbol = "♠"
+
+        self.window.addstr(int(self.y + self.height - 1), int(self.x + self.width/2 -1), suit_symbol)
 
     def maybe_move(self, card: Card) -> bool:
         """Moves (if it's possible) a card to the Foundation pile."""
-        try:
-            _ = self.card_list[card.num.value]
+        self.num: Enum.value = card.num.value
+        if self.num == 0:
             return False
-        except IndexError:
-            try:
-                if self.card_list:
-                    if self.is_empty():
-                        self.card_list.append(card)
-                        card.x = self.x
-                        card.y = self.y
-                        return True
-                    _ = self.card_list[card.num.value - 1]
+        if self.num == 1:
+            if self.is_empty():
                 self.card_list.append(card)
-                card.x = self.x
-                card.y = self.y
-            except IndexError:
-                return False
+                card.undraw()
+                card.draw(self.x, self.y, False, True)
+                return True
+        else:
+            if self.num == self.card_list[self.num].num.value + 1:
+                self.card_list.append(card)
+                card.undraw()
+                self.card_list[self.num - 1].undraw()
+                card.draw(self.x, self.y, "Foundation", True)
+                return True
+            else:
+                return False    
+        
 
 class TableauPile(Pile):
     """Simple class for one of the 7 main piles."""
@@ -95,7 +109,7 @@ class TableauPile(Pile):
             self.card_list.append(card)
             card.undraw()
             card.draw(last_card.x, last_card.y + 4)
-        
+            card.pile = "Tableau"
 
 
 class Tableau:
@@ -114,11 +128,11 @@ class Tableau:
             # Take first 'pile_num' cards from remaining deck
             for i, card in enumerate(self.cards[:pile_num]):
                 if i == pile_num - 1:  # Only top card is face-up
-                    card.draw(40 + (7 - pile_num) * 12, 20 + i * 2, False, True)
+                    card.draw(40 + (7 - pile_num) * 12, 20 + i * 2, "Tableau", True)
                     current_pile.card_list.append(card)  # Add to current pile
                 else:
                     # Position cards diagonally (adjust coordinates as needed)
-                    card.draw(40 + (7 - pile_num) * 12, 20 + i * 2)
+                    card.draw(40 + (7 - pile_num) * 12, 20 + i * 2, "Tableau", False)
                     current_pile.card_list.append(card)  # Add to current pile
             # Remove these cards from the main list
             self.cards = self.cards[pile_num:]
@@ -172,15 +186,15 @@ class StockPile(Pile):
         card.turn()
         card.undraw()
         if next_card:
-            next_card.draw(self.x, self.y, True, False)
+            next_card.draw(self.x, self.y, "Stock", False)
         else:
             self.draw_empty(window)
         if turned_card:
             turned_card.undraw()
-        card.draw(card.x+10, card.y, True, True)
-        if not self.card_list: # Making the pile reset
+        card.draw(card.x+10, card.y, "Stock", True)
+        if self.card_list == []: # Making the pile reset
             for card in copy.deepcopy(self.turned_card_list):
                 card.undraw()
-                card.draw(40, 5, True, False)
+                card.draw(40, 5, "Stock", False)
                 self.card_list.append(card)
-                self.turned_card_list.remove(card)
+                self.turned_card_list.remove(card)    

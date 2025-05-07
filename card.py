@@ -50,17 +50,18 @@ class Card:
         self.turned = False
         self.is_active = False
         curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_RED)
+        self.pile = None
 
-    def draw(self, x:int=None, y:int=None, is_stockpile:bool=False, turned:bool=False):
+
+
+    def draw(self, x:int=None, y:int=None, pile:str|None=None, turned:bool=False):
+        self.pile = pile
         """Draws the card"""
         self.turned = turned
         if x and y:
             self.x = x
             self.y = y
-        if self.turned:
-            width = self.width
-            height = self.height
-        elif is_stockpile:
+        if self.turned or self.pile == "Stock":
             width = self.width
             height = self.height
         else:
