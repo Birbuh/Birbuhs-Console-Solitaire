@@ -198,9 +198,8 @@ class StockPile(Pile):
 
             # Draw the newly turned card
             card.draw(self.x + 10, self.y, "Stock", True)
-        else:
-            # Reset the pile - move all turned cards back to stock pile
-            # Create a new list to avoid modifying while iterating
+
+        else: # Reset the pile - move all turned cards back to stock pile
             cards_to_move = list(self.turned_card_list)
             for card in cards_to_move:
                 card.undraw()

@@ -144,6 +144,7 @@ def game(stdscr: curses.window):
                                     # Make this card active
                                     card.activate()
                                     stdscr.refresh()  # Refresh to show the active card
+                                    break
                     elif active_card is not None:
                         for (
                             pile
@@ -167,6 +168,15 @@ def game(stdscr: curses.window):
                     # Check if stock pile was clicked
                     if stock_pile.is_clicked(mouse_x, mouse_y):
                         stock_pile.check_card(stdscr)
+                    for card in cards:
+                        if card.is_clicked(mouse_x, mouse_y):
+                            # Allow any card to be clicked, but it must be turned up
+                            if card.turned:
+                                # Make this card active
+                                card.activate()
+                                stdscr.refresh()  # Refresh to show the active card
+                                active_card.deactivate()
+                                break
                 except Exception as e:
                     logger.error(e, exc_info=True)
         except Exception as e:
