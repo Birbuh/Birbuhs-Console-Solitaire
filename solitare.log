@@ -2429,3 +2429,751 @@ Traceback (most recent call last):
 IndexError: list index out of range
 2025-05-07 08:54 - DEBUG: Activating the card: A♥
 2025-05-07 08:54 - DEBUG: Deactivating the card A♥
+2025-05-07 09:28 - DEBUG: Activating the card: A♣
+2025-05-07 09:28 - DEBUG: Deactivating the card A♣
+2025-05-07 09:28 - DEBUG: Activating the card: A♦
+2025-05-07 09:28 - DEBUG: Activating the card: 5♦
+2025-05-07 09:28 - DEBUG: Activating the card: 5♠
+2025-05-07 09:28 - DEBUG: Activating the card: J♥
+2025-05-07 09:28 - DEBUG: Deactivating the card A♦
+2025-05-07 09:29 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 87, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 09:29 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 87, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 09:29 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 87, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-07 09:29 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 149, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 87, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-08 07:36 - DEBUG: Activating the card: A♥
+2025-05-08 07:36 - DEBUG: Deactivating the card A♥
+2025-05-08 07:36 - DEBUG: Activating the card: 2♥
+2025-05-08 07:36 - DEBUG: Activating the card: 9♠
+2025-05-08 07:36 - DEBUG: Activating the card: A♣
+2025-05-08 07:36 - DEBUG: Activating the card: 3♠
+2025-05-08 07:36 - DEBUG: Activating the card: 7♦
+2025-05-08 07:36 - DEBUG: Activating the card: K♥
+2025-05-08 07:36 - DEBUG: Activating the card: 4♥
+2025-05-08 07:36 - DEBUG: Activating the card: 10♦
+2025-05-08 07:36 - DEBUG: Activating the card: 5♥
+2025-05-08 07:36 - DEBUG: Activating the card: 6♥
+2025-05-08 07:36 - DEBUG: Activating the card: 10♣
+2025-05-08 07:36 - DEBUG: Activating the card: Q♥
+2025-05-08 07:36 - DEBUG: Activating the card: Q♠
+2025-05-08 07:36 - DEBUG: Activating the card: 2♠
+2025-05-08 07:36 - DEBUG: Activating the card: 8♥
+2025-05-08 07:36 - DEBUG: Activating the card: 10♠
+2025-05-08 07:36 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 152, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-08 07:36 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 152, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-08 07:36 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 152, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-08 07:36 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 152, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-08 07:36 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 152, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 88, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-08 07:45 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 07:45 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 171, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-08 07:45 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 171, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-08 07:45 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 171, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-08 07:45 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 171, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-08 07:45 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 171, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-08 07:45 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 171, in check_card
+    card = self.card_list[-1]
+           ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:57 - ERROR: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 168, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 169, in check_card
+    if self.is_clicked():
+       ~~~~~~~~~~~~~~~^^
+TypeError: Pile.is_clicked() missing 2 required positional arguments: 'x' and 'y'
+2025-05-08 07:58 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 07:58 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 07:58 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 07:58 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 07:58 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 07:58 - DEBUG: Activating the card: K♥
+2025-05-08 07:58 - DEBUG: Activating the card: 6♥
+2025-05-08 07:58 - DEBUG: Activating the card: 10♦
+2025-05-08 07:58 - DEBUG: Activating the card: A♥
+2025-05-08 07:58 - DEBUG: Activating the card: 5♥
+2025-05-08 07:58 - DEBUG: Activating the card: J♦
+2025-05-08 07:58 - DEBUG: Activating the card: 8♥
+2025-05-08 07:58 - DEBUG: Activating the card: 2♦
+2025-05-08 07:58 - DEBUG: Activating the card: 5♣
+2025-05-08 07:58 - DEBUG: Activating the card: 8♣
+2025-05-08 07:58 - DEBUG: Activating the card: 10♠
+2025-05-08 07:58 - DEBUG: Activating the card: 9♥
+2025-05-08 07:58 - DEBUG: Activating the card: A♣
+2025-05-08 07:58 - DEBUG: Activating the card: 10♣
+2025-05-08 07:58 - DEBUG: Activating the card: 2♠
+2025-05-08 07:58 - DEBUG: Activating the card: Q♠
+2025-05-08 07:58 - DEBUG: Activating the card: 7♦
+2025-05-08 07:58 - DEBUG: Activating the card: 3♣
+2025-05-08 07:58 - DEBUG: Activating the card: J♠
+2025-05-08 07:58 - DEBUG: Activating the card: 6♣
+2025-05-08 07:58 - DEBUG: Activating the card: A♠
+2025-05-08 07:58 - DEBUG: Activating the card: 4♥
+2025-05-08 07:58 - DEBUG: Activating the card: 4♠
+2025-05-08 07:58 - DEBUG: Activating the card: K♦
+2025-05-08 07:58 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 152, in game
+    pile.maybe_move(
+    ~~~~~~~~~~~~~~~^
+        active_card
+        ^^^^^^^^^^^
+    )  # Move the card if it's possible
+    ^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 86, in maybe_move
+    if self.num == self.card_list[self.num].num.value + 1:
+                   ~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: list index out of range
+2025-05-08 08:08 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 08:08 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 08:08 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 08:08 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 08:08 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 192, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-08 08:08 - DEBUG: Activating the card: 7♣
+2025-05-08 08:08 - DEBUG: Activating the card: 10♦
+2025-05-08 08:08 - DEBUG: Activating the card: 2♠
+2025-05-08 08:08 - DEBUG: Activating the card: 10♠
+2025-05-08 08:08 - DEBUG: Activating the card: 6♥
+2025-05-08 08:08 - DEBUG: Activating the card: J♠
+2025-05-08 08:08 - DEBUG: Activating the card: 8♦
+2025-05-08 08:08 - DEBUG: Activating the card: 10♥
+2025-05-08 08:08 - DEBUG: Activating the card: 4♠
+2025-05-08 08:08 - DEBUG: Activating the card: 2♥
+2025-05-08 08:08 - DEBUG: Activating the card: 4♥
+2025-05-08 08:08 - DEBUG: Activating the card: 7♠
+2025-05-08 08:08 - DEBUG: Activating the card: Q♠
+2025-05-08 08:08 - DEBUG: Activating the card: J♦
+2025-05-08 08:08 - DEBUG: Activating the card: 7♥
+2025-05-08 08:08 - DEBUG: Activating the card: 8♠
+2025-05-08 08:08 - DEBUG: Activating the card: K♦
+2025-05-08 08:08 - DEBUG: Activating the card: Q♥
+2025-05-08 08:08 - DEBUG: Activating the card: Q♣
+2025-05-08 08:08 - DEBUG: Activating the card: 6♦
+2025-05-08 08:08 - DEBUG: Activating the card: 9♥
+2025-05-08 08:08 - DEBUG: Activating the card: 2♣
+2025-05-08 08:08 - DEBUG: Activating the card: 6♠
+2025-05-08 08:08 - DEBUG: Activating the card: 8♣
+2025-05-08 17:55 - ERROR: StockPile.check_card() takes 2 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StockPile.check_card() takes 2 positional arguments but 4 were given
+2025-05-08 17:55 - ERROR: StockPile.check_card() takes 2 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StockPile.check_card() takes 2 positional arguments but 4 were given
+2025-05-08 17:55 - ERROR: StockPile.check_card() takes 2 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StockPile.check_card() takes 2 positional arguments but 4 were given
+2025-05-08 17:55 - ERROR: StockPile.check_card() takes 2 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StockPile.check_card() takes 2 positional arguments but 4 were given
+2025-05-08 17:56 - ERROR: StockPile.check_card() takes 2 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StockPile.check_card() takes 2 positional arguments but 4 were given
+2025-05-08 17:56 - ERROR: StockPile.check_card() takes 2 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 167, in game
+    stock_pile.check_card(stdscr, mouse_x, mouse_y)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StockPile.check_card() takes 2 positional arguments but 4 were given
+2025-05-09 07:17 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 169, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 204, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-09 07:17 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 169, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 204, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object
+2025-05-09 07:17 - DEBUG: Activating the card: 7♣
+2025-05-09 07:17 - DEBUG: Activating the card: 4♥
+2025-05-09 07:17 - DEBUG: Activating the card: 5♣
+2025-05-09 07:17 - DEBUG: Activating the card: 4♦
+2025-05-09 07:17 - DEBUG: Activating the card: 9♠
+2025-05-09 07:17 - DEBUG: Activating the card: 7♥
+2025-05-09 07:17 - DEBUG: Activating the card: Q♦
+2025-05-09 07:17 - DEBUG: Activating the card: 6♦
+2025-05-09 07:17 - DEBUG: Activating the card: 5♥
+2025-05-09 07:17 - DEBUG: Activating the card: 3♣
+2025-05-09 07:17 - DEBUG: Activating the card: 7♦
+2025-05-09 07:17 - DEBUG: Activating the card: K♦
+2025-05-09 07:17 - DEBUG: Activating the card: 5♠
+2025-05-09 07:17 - DEBUG: Activating the card: J♣
+2025-05-09 07:17 - DEBUG: Activating the card: 10♦
+2025-05-09 07:17 - DEBUG: Activating the card: 7♠
+2025-05-09 07:17 - DEBUG: Activating the card: 4♠
+2025-05-09 07:17 - DEBUG: Activating the card: 2♥
+2025-05-09 07:17 - DEBUG: Activating the card: 3♥
+2025-05-09 07:17 - DEBUG: Activating the card: 8♥
+2025-05-09 07:17 - DEBUG: Activating the card: 9♦
+2025-05-09 07:17 - DEBUG: Activating the card: 10♣
+2025-05-09 07:17 - DEBUG: Activating the card: 8♣
+2025-05-09 07:17 - DEBUG: Activating the card: 8♠
+2025-05-09 07:17 - ERROR: cannot pickle '_curses.window' object
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 169, in game
+    stock_pile.check_card(stdscr)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 204, in check_card
+    for card in copy.deepcopy(self.turned_card_list):
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 197, in _deepcopy_list
+    append(deepcopy(a, memo))
+           ~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 163, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "/usr/lib/python3.13/copy.py", line 260, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib/python3.13/copy.py", line 137, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib/python3.13/copy.py", line 222, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/copy.py", line 152, in deepcopy
+    rv = reductor(4)
+TypeError: cannot pickle '_curses.window' object

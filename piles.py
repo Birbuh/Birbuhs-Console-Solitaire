@@ -1,7 +1,5 @@
 import curses
-import copy
 
-from enum import Enum
 from card import Card, CardColorEnum
 
 
@@ -14,7 +12,6 @@ class Pile:
         self.y = None
         self.width = 8
         self.height = 6
-
 
     def is_empty(self) -> bool:
         if self.card_list:
@@ -35,8 +32,6 @@ class FoundationPile(Pile):
     def __init__(self, window: curses.window, color):
         super().__init__()
         self.window = window
-        self.width = 8
-        self.height = 6
         self.x = 112
         self.y = 5
         if color == CardColorEnum.HEARTS:
@@ -71,11 +66,13 @@ class FoundationPile(Pile):
         else:  # SPADES
             suit_symbol = "♠"
 
-        self.window.addstr(int(self.y + self.height - 1), int(self.x + self.width/2 -1), suit_symbol)
+        self.window.addstr(
+            int(self.y + self.height - 1), int(self.x + self.width / 2 - 1), suit_symbol
+        )
 
     def maybe_move(self, card: Card) -> bool:
         """Moves (if it's possible) a card to the Foundation pile."""
-        self.num: Enum.value = card.num.value
+        self.num = card.num.value
         if self.num == 0:
             return False
         if self.num == 1:
@@ -92,8 +89,8 @@ class FoundationPile(Pile):
                 card.draw(self.x, self.y, "Foundation", True)
                 return True
             else:
-                return False    
-        
+                return False
+
 
 class TableauPile(Pile):
     """Simple class for one of the 7 main piles."""
@@ -104,7 +101,7 @@ class TableauPile(Pile):
     def try_move_card(self, card: Card):
         last_card = self.card_list[-1]
         if card.num.value == last_card.num.value + 1 and (
-            (card.color_check() == "black" and last_card.color_check())
+            card.color_check() == "black" and last_card.color_check()
         ):
             self.card_list.append(card)
             card.undraw()
@@ -150,51 +147,63 @@ class StockPile(Pile):
         self.y = 5
         self.turned_card_list: list[Card] = []
 
-
     def draw(self):
         """Drawing..."""
         for card in self.card_list:
-            card.draw(self.x, self.y, True)
+            card.draw(self.x, self.y, "Stock", False)
 
     def draw_empty(self, window: curses.window):
-            for i in range(self.width):
-                window.addch(self.y, self.x + i, curses.ACS_HLINE)
-                window.addch(self.y + self.height, self.x + i, curses.ACS_HLINE)
-            for i in range(self.height):
-                window.addch(self.y + i, self.x, curses.ACS_VLINE)
-                window.addch(self.y + i, self.x + self.width, curses.ACS_VLINE)
-            window.addch(self.y, self.x, curses.ACS_ULCORNER)
-            window.addch(self.y, self.x + self.width, curses.ACS_URCORNER)
-            window.addch(self.y + self.height, self.x, curses.ACS_LLCORNER)
-            window.addch(
-                self.y + self.height, self.x + self.width, curses.ACS_LRCORNER
-            )
-
+        for i in range(self.width):
+            window.addch(self.y, self.x + i, curses.ACS_HLINE)
+            window.addch(self.y + self.height, self.x + i, curses.ACS_HLINE)
+        for i in range(self.height):
+            window.addch(self.y + i, self.x, curses.ACS_VLINE)
+            window.addch(self.y + i, self.x + self.width, curses.ACS_VLINE)
+        window.addch(self.y, self.x, curses.ACS_ULCORNER)
+        window.addch(self.y, self.x + self.width, curses.ACS_URCORNER)
+        window.addch(self.y + self.height, self.x, curses.ACS_LLCORNER)
+        window.addch(self.y + self.height, self.x + self.width, curses.ACS_LRCORNER)
 
     def check_card(self, window: curses.window):
-        card = self.card_list[-1]
-        try: 
-            next_card = self.card_list[-2]
-        except IndexError:
-            next_card = None
-        try:
-            turned_card = self.turned_card_list[-1]
-        except IndexError:
-            turned_card = None
-        self.card_list.remove(card)
-        self.turned_card_list.append(card)
-        card.turn()
-        card.undraw()
-        if next_card:
-            next_card.draw(self.x, self.y, "Stock", False)
+        """
+        Turning the first (technically last) card of the stockpile.
+        If card_list is empty, draw_empty(), and in the next click all of the cards will go back to it's place.
+        """
+        if self.card_list:
+            # Turn over the top card
+            card = self.card_list[-1]
+            try:
+                next_card = self.card_list[-2]
+            except IndexError:
+                next_card = None
+            try:
+                turned_card = self.turned_card_list[-1]
+            except IndexError:
+                turned_card = None
+
+            self.card_list.remove(card)
+            self.turned_card_list.append(card)
+            card.turn()
+            card.undraw()
+
+            # Draw the next card in the stock pile or empty pile
+            if next_card:
+                next_card.draw(self.x, self.y, "Stock", False)
+            else:
+                self.draw_empty(window)
+
+            # Undraw previous turned card if exists
+            if turned_card:
+                turned_card.undraw()
+
+            # Draw the newly turned card
+            card.draw(self.x + 10, self.y, "Stock", True)
         else:
-            self.draw_empty(window)
-        if turned_card:
-            turned_card.undraw()
-        card.draw(card.x+10, card.y, "Stock", True)
-        if self.card_list == []: # Making the pile reset
-            for card in copy.deepcopy(self.turned_card_list):
+            # Reset the pile - move all turned cards back to stock pile
+            # Create a new list to avoid modifying while iterating
+            cards_to_move = list(self.turned_card_list)
+            for card in cards_to_move:
                 card.undraw()
-                card.draw(40, 5, "Stock", False)
+                card.draw(self.x, self.y, "Stock", False)
                 self.card_list.append(card)
-                self.turned_card_list.remove(card)    
+                self.turned_card_list.remove(card)

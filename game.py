@@ -51,6 +51,7 @@ def start_game(stdscr: curses.window):
     stdscr.clear()
     stdscr.refresh()
 
+
 def game(stdscr: curses.window):
     """Main game function"""
     # Make sure that nodelay mode is kept from start_game
@@ -114,26 +115,26 @@ def game(stdscr: curses.window):
             active_card: Card | None = next(
                 (card for card in cards if card.is_active), None
             )
-            key = stdscr.getch() # Checking for input
-            if key == ord("q"): # q for quit
+            key = stdscr.getch()  # Checking for input
+            if key == ord("q"):  # q for quit
                 running = False
-            elif key == curses.KEY_MOUSE: # mouse click
+            elif key == curses.KEY_MOUSE:  # mouse click
                 try:
-                    _, mouse_x, mouse_y, _, _ = curses.getmouse() # get mouse pos
+                    _, mouse_x, mouse_y, _, _ = curses.getmouse()  # get mouse pos
                     if restart_button.is_clicked(mouse_x, mouse_y):
                         # Restart the game
                         stdscr.clear()
                         return game(stdscr)
-                    if active_card is None: 
+                    if active_card is None:
                         for card in cards:
                             if (
                                 card
-                                in (  # ignore the card if it's already in the Foundations 
+                                in (  # ignore the card if it's already in the Foundations
                                     foundation_clubs.card_list
                                     or foundation_diamonds.card_list
                                     or foundation_spades.card_list
                                     or foundation_hearts.card_list
-                                    or stock_pile.card_list # or in unturned stock pile
+                                    or stock_pile.card_list  # or in unturned stock pile
                                 )
                             ):
                                 continue
@@ -144,16 +145,26 @@ def game(stdscr: curses.window):
                                     card.activate()
                                     stdscr.refresh()  # Refresh to show the active card
                     elif active_card is not None:
-                        for pile in foundation_piles: # Checking for click in foundation piles
+                        for (
+                            pile
+                        ) in foundation_piles:  # Checking for click in foundation piles
                             if pile.is_clicked(mouse_x, mouse_y):
                                 pile.maybe_move(
                                     active_card
                                 )  # Move the card if it's possible
                                 # Reset the active card
                                 active_card.deactivate()
-                        for pile in tableau_piles:  # Checking for click in Tableau piles...
-                            if pile.card_list[-1].is_clicked(mouse_x, mouse_y): # ...on the last card
-                                pile.try_move_card(active_card) # Try to move the active card on the clicked one.
+                        for (
+                            pile
+                        ) in tableau_piles:  # Checking for click in Tableau piles...
+                            if pile.card_list[-1].is_clicked(
+                                mouse_x, mouse_y
+                            ):  # ...on the last card
+                                pile.try_move_card(
+                                    active_card
+                                )  # Try to move the active card on the clicked one.
+
+                    # Check if stock pile was clicked
                     if stock_pile.is_clicked(mouse_x, mouse_y):
                         stock_pile.check_card(stdscr)
                 except Exception as e:

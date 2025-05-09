@@ -52,9 +52,13 @@ class Card:
         curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_RED)
         self.pile = None
 
-
-
-    def draw(self, x:int=None, y:int=None, pile:str|None=None, turned:bool=False):
+    def draw(
+        self,
+        x: int = None,
+        y: int = None,
+        pile: str | None = None,
+        turned: bool = False,
+    ):
         self.pile = pile
         """Draws the card"""
         self.turned = turned
@@ -130,7 +134,7 @@ class Card:
     def undraw(self):
         for i in range(self.height + 1):
             self.window.move(self.y + i, self.x)
-            self.window.addstr(" " * int(self.width+1))
+            self.window.addstr(" " * int(self.width + 1))
         self.window.refresh()
 
     def get_symbol(self):

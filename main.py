@@ -1,10 +1,6 @@
 import curses
-
-# import asyncio
-import logging
-
-# import time
 import sys
+import logging
 
 from game import start_game, game
 
