@@ -1,13 +1,10 @@
 import curses
 import logging
 import time
-import itertools
-import random
 
-from card import Card, CardColorEnum, CardNumberEnum
+from desk import Desk
 from buttons import Button
-from piles import FoundationPile, Tableau, StockPile  # , TableauPile
-
+from card import Card
 
 logger = logging.getLogger()
 
@@ -62,36 +59,9 @@ def game(stdscr: curses.window):
     restart_button = Button(10, 10, "Restart the game", stdscr)
     restart_button.draw()
 
-    # Create and shuffle cards
-    cards = [
-        Card(color, num, stdscr)
-        for color, num in itertools.product(CardColorEnum, CardNumberEnum)
-    ]
-    random.shuffle(cards)
-
-    # Display cards
-    lasted_cards, tableau_piles = Tableau(cards).draw()
-    # Initialize the Foundation Piles
-    foundation_hearts = FoundationPile(stdscr, CardColorEnum.HEARTS)
-    foundation_diamonds = FoundationPile(stdscr, CardColorEnum.DIAMONDS)
-    foundation_clubs = FoundationPile(stdscr, CardColorEnum.CLUBS)
-    foundation_spades = FoundationPile(stdscr, CardColorEnum.SPADES)
-    # Drawing them
-    foundation_hearts.draw()
-    foundation_diamonds.draw()
-    foundation_clubs.draw()
-    foundation_spades.draw()
-    # Grouping them
-    foundation_piles = [
-        foundation_hearts,
-        foundation_diamonds,
-        foundation_clubs,
-        foundation_spades,
-    ]
-
-    # Initializing and drawing Stock Pile
-    stock_pile = StockPile(lasted_cards)
-    stock_pile.draw()
+    desk = Desk(stdscr)
+    desk.initialize()
+    desk.init_draw()
 
     # Game instructions
     stdscr.addstr(2, 10, "Solitaire Game")
@@ -101,7 +71,7 @@ def game(stdscr: curses.window):
     start_time = time.time()
     # Game loop
     running = True
-    while running:
+    while running: # EVENT LOOP
         # Show time
         elapsed_mins = (time.time() - start_time) / 60
         stdscr.addstr(
@@ -111,72 +81,23 @@ def game(stdscr: curses.window):
         )
 
         try:
-            # Searching for active card
-            active_card: Card | None = next(
-                (card for card in cards if card.is_active), None
-            )
             key = stdscr.getch()  # Checking for input
             if key == ord("q"):  # q for quit
                 running = False
             elif key == curses.KEY_MOUSE:  # mouse click
                 try:
                     _, mouse_x, mouse_y, _, _ = curses.getmouse()  # get mouse pos
+                    desk.change_mouse_pos(mouse_x, mouse_y)
                     if restart_button.is_clicked(mouse_x, mouse_y):
                         # Restart the game
                         stdscr.clear()
                         return game(stdscr)
-                    if active_card is None:
-                        for card in cards:
-                            if (
-                                card
-                                in (  # ignore the card if it's already in the Foundations
-                                    foundation_clubs.card_list
-                                    or foundation_diamonds.card_list
-                                    or foundation_spades.card_list
-                                    or foundation_hearts.card_list
-                                    or stock_pile.card_list  # or in unturned stock pile
-                                )
-                            ):
-                                continue
-                            if card.is_clicked(mouse_x, mouse_y):
-                                # Allow any card to be clicked, but it must be turned up
-                                if card.turned:
-                                    # Make this card active
-                                    card.activate()
-                                    stdscr.refresh()  # Refresh to show the active card
-                                    break
-                    elif active_card is not None:
-                        for (
-                            pile
-                        ) in foundation_piles:  # Checking for click in foundation piles
-                            if pile.is_clicked(mouse_x, mouse_y):
-                                pile.maybe_move(
-                                    active_card
-                                )  # Move the card if it's possible
-                                # Reset the active card
-                                active_card.deactivate()
-                        for (
-                            pile
-                        ) in tableau_piles:  # Checking for click in Tableau piles...
-                            if pile.card_list[-1].is_clicked(
-                                mouse_x, mouse_y
-                            ):  # ...on the last card
-                                pile.try_move_card(
-                                    active_card
-                                )  # Try to move the active card on the clicked one.
-
-                    # Check if stock pile was clicked
-                    if stock_pile.is_clicked(mouse_x, mouse_y):
-                        stock_pile.check_card(stdscr)
-                    for card in cards:
-                        if card.is_clicked(mouse_x, mouse_y):
-                            # Allow any card to be clicked, but it must be turned up
-                            if card.turned:
-                                # Make this card active
-                                card.activate()
-                                stdscr.refresh()  # Refresh to show the active card
-                                active_card.deactivate()
-                                break
+                    active_card: Card | None = desk.active_card_search()
+                    if active_card:
+                        desk.try_moving_active_card()
+                    else:
+                        desk.try_activate_some_card()
+                    desk.check_stockpile()
                 except Exception as e:
                     logger.error(e, exc_info=True)
         except Exception as e:

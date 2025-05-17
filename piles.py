@@ -24,6 +24,36 @@ class Pile:
         return self.x <= x < (self.x + self.width) and self.y <= y < (
             self.y + self.height
         )
+    
+    def is_in_card_list(self, card):
+        return card in self.card_list
+
+    def last_card_clicked(self, x, y):
+        return self.card_list[-1].is_clicked(x, y)
+
+    # Interface methods
+    def can_move_to(self):
+        raise NotImplementedError()
+
+    def can_move_from(self):
+        raise NotImplementedError()
+
+    # Moving the card methods
+    def move_to(self, pile_o, pile_str):
+        if self.can_move_to():
+            try:
+                next_card = self.card_list[-1]
+                self.card_list.remove(next_card)
+                next_card.undraw()
+                next_card.draw(pile_o.x, pile_o.y, pile_str, True)
+            except IndexError:
+                pass
+
+    def move_from_other_pile(self, card: Card, addy, pile_str):
+        if self.can_move_from():
+            self.card_list.append(card)
+            card.undraw()
+            card.draw(self.x, self.y + addy, pile_str, True)
 
 
 class FoundationPile(Pile):
@@ -91,50 +121,54 @@ class FoundationPile(Pile):
             else:
                 return False
 
+    # Method override
+    def can_move_from(self):
+        return True
+
 
 class TableauPile(Pile):
-    """Simple class for one of the 7 main piles."""
+    """
+    Simple class for one of the 7 main piles.
+    card_list: list[Card]; that is a list filled with the cards that belong in the pile.
+    x: int; coordinate of the pile on the x axis
+    """
 
-    def __init__(self):
+    def __init__(self, card_list: list[Card], x: int):
         super().__init__()
+        self.card_list = card_list
+        self.x = x
+        self.y = 20
+
+    def draw(self):
+        for i, card in enumerate(self.card_list):
+            if i == len(self.card_list) - 1:  # Last card should be face up
+                card.draw(self.x, 20 + i * 2, "Tableau", True)
+            else:
+                card.draw(self.x, 20 + i * 2, "Tableau", False)
 
     def try_move_card(self, card: Card):
         last_card = self.card_list[-1]
         if card.num.value == last_card.num.value + 1 and (
-            card.color_check() == "black" and last_card.color_check()
+            card.color_check() != last_card.color_check()
         ):
             self.card_list.append(card)
             card.undraw()
             card.draw(last_card.x, last_card.y + 4)
             card.pile = "Tableau"
 
+    def iterate_and_activate(self, mouse_x, mouse_y) -> bool:
+        for card in self.card_list:
+            if card.is_clicked(mouse_x, mouse_y) and card.turned:
+                card.activate()
+                return True
+        return False
 
-class Tableau:
-    """Class that's drawing the whole Tableau on the window."""
+    # Method override
+    def can_move_to(self) -> bool:
+        return True
 
-    def __init__(self, cards: list[Card]):
-        self.cards = cards
-
-    def draw(self):
-        """It has to be called if you want to draw the Tableau"""
-        self.piles = [TableauPile() for _ in range(7)]
-        # Distribute cards to piles (pile 1 gets 1 card, pile 7 gets 7 cards)
-        for pile_num in range(7, 0, -1):
-            current_pile = self.piles[7 - pile_num]  # Convert 7→0, 6→1, etc.
-
-            # Take first 'pile_num' cards from remaining deck
-            for i, card in enumerate(self.cards[:pile_num]):
-                if i == pile_num - 1:  # Only top card is face-up
-                    card.draw(40 + (7 - pile_num) * 12, 20 + i * 2, "Tableau", True)
-                    current_pile.card_list.append(card)  # Add to current pile
-                else:
-                    # Position cards diagonally (adjust coordinates as needed)
-                    card.draw(40 + (7 - pile_num) * 12, 20 + i * 2, "Tableau", False)
-                    current_pile.card_list.append(card)  # Add to current pile
-            # Remove these cards from the main list
-            self.cards = self.cards[pile_num:]
-
-        return self.cards, self.piles
+    def can_move_from(self) -> bool:
+        return True
 
 
 class StockPile(Pile):
@@ -169,17 +203,17 @@ class StockPile(Pile):
         Turning the first (technically last) card of the stockpile.
         If card_list is empty, draw_empty(), and in the next click all of the cards will go back to it's place.
         """
-        if self.card_list:
-            # Turn over the top card
-            card = self.card_list[-1]
+        if self.turned_card_list:
+            turned_card = self.turned_card_list[-1]
+        else:
+            turned_card = None
+
+        if self.card_list:  # Turn over the top card
             try:
                 next_card = self.card_list[-2]
             except IndexError:
                 next_card = None
-            try:
-                turned_card = self.turned_card_list[-1]
-            except IndexError:
-                turned_card = None
+            card = self.card_list[-1]
 
             self.card_list.remove(card)
             self.turned_card_list.append(card)
@@ -199,10 +233,24 @@ class StockPile(Pile):
             # Draw the newly turned card
             card.draw(self.x + 10, self.y, "Stock", True)
 
-        else: # Reset the pile - move all turned cards back to stock pile
+        else:  # Reset the pile - move all turned cards back to stock pile
             cards_to_move = list(self.turned_card_list)
             for card in cards_to_move:
                 card.undraw()
                 card.draw(self.x, self.y, "Stock", False)
                 self.card_list.append(card)
                 self.turned_card_list.remove(card)
+
+    def is_turned_list_empty(self):
+        return any(self.turned_card_list)
+
+    def iterate_and_activate(self, mouse_x, mouse_y) -> bool:
+        card = self.turned_card_list[-1]
+        if card.is_clicked(mouse_x, mouse_y):
+            card.activate()
+            return True
+        else:
+            return False
+
+    def can_move_to(self):
+        return True

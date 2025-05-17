@@ -6,6 +6,12 @@ from enum import Enum
 logger = logging.getLogger()
 
 
+class CardPileEnum(Enum):
+    FOUNDATIONS = 0
+    TABLEAU = 1
+    STOCK = 2    
+
+
 class CardColorEnum(Enum):
     HEARTS = 0
     SPADES = 1
@@ -42,15 +48,18 @@ class Card:
     """
 
     def __init__(self, color, num, window: curses.window):
-        self.color = color
-        self.num = num
+        self.color: Enum.name = color
+        self.num: Enum.name = num
         self.window = window
-        self.width = 8
-        self.height = 6
-        self.turned = False
-        self.is_active = False
+        self.width: int = 8
+        self.height: int = 6
+        self.turned: bool = False
+        self.is_active: bool = False
         curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_RED)
-        self.pile = None
+        self.pile: str | None = None
+        self.drawn: bool = False
+        self.x = None
+        self.y = None
 
     def draw(
         self,
@@ -59,13 +68,13 @@ class Card:
         pile: str | None = None,
         turned: bool = False,
     ):
-        self.pile = pile
         """Draws the card"""
+        self.pile = pile
         self.turned = turned
         if x and y:
             self.x = x
             self.y = y
-        if self.turned or self.pile == "Stock":
+        if self.turned or self.pile == CardPileEnum.STOCK:
             width = self.width
             height = self.height
         else:
@@ -119,23 +128,37 @@ class Card:
         # Draw card content
         if self.turned:
             card_symbol = self.get_symbol()
-            self.window.addstr(self.y + 1, self.x + 1, card_symbol)
-            self.window.addstr(
-                self.y + self.height - 1, self.x + self.width - 2, card_symbol
-            )
-        else:
-            self.window.addstr(self.y + 1, self.x + 1, "~~~~~")
-            if not height == int(self.height / 2):
+            try:
+                self.window.addstr(self.y + 1, self.x + 1, card_symbol)
+            except curses.error:
+                pass
+            try:
                 self.window.addstr(
-                    self.y + self.height - 1, self.x + self.width - 2, "~~"
+                    self.y + self.height - 1, self.x + self.width - 2, card_symbol
                 )
+            except curses.error:
+                pass
+        else:
+            try:
+                self.window.addstr(self.y + 1, self.x + 1, "~~~~")
+            except curses.error:
+                pass
+            if not height == int(self.height / 2):
+                try:
+                    self.window.addstr(
+                        self.y + self.height - 1, self.x + self.width - 2, "~~"
+                    )
+                except curses.error:
+                    pass
         self.window.refresh()
+        self.drawn = True
 
     def undraw(self):
         for i in range(self.height + 1):
             self.window.move(self.y + i, self.x)
             self.window.addstr(" " * int(self.width + 1))
         self.window.refresh()
+        self.drawn = False
 
     def get_symbol(self):
         """Returns a string representation of the card"""
@@ -163,11 +186,18 @@ class Card:
         return f"{num_symbol}{suit_symbol}"
 
     def turn(self):
-        """Turns the card up."""
-        if self.turned:
-            pass
+        """Turns the card up.
+        
+        (or down if it's turned and in stock pile)"""
+        if self.turned and self.pile == CardPileEnum.STOCK: # Card can't be turned down except for stockpile.
+            self.turned = False
         elif not self.turned:
             self.turned = True
+        # Ignore all other 
+
+    def redraw(self):
+        self.undraw()
+        self.draw(self.x, self.y, self.pile, self.turned)
 
     def activate(self):
         """Makes the card active and marking it red"""
@@ -205,17 +235,27 @@ class Card:
                 self.window.addstr(
                     self.y + self.height - 1, self.x + self.width - 2, card_symbol
                 )
+            self.redraw()
         except Exception as e:
             logger.error(e, exc_info=True)
 
     def is_clicked(self, x, y) -> bool:
         """Checking if the card is clicked"""
-        return (self.x <= x < (self.x + self.width)) and (
-            self.y <= y < (self.y + self.height)
-        )
+        try:
+            return (self.x <= x < (self.x + self.width)) and (
+                self.y <= y < (self.y + self.height)
+            )
+        except Exception:
+            logger.error(str(self), exc_info=True)
 
     def color_check(self) -> str:
         if self.color.value & 2 == 1:
             return "black"
         else:
             return "red"
+        
+    def change_piles(self, new_pile):
+        self.pile = new_pile
+    
+    def __str__(self):
+        return f"Card: {self.color}, {self.num}"
