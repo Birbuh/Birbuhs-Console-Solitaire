@@ -9,7 +9,7 @@ logger = logging.getLogger()
 class CardPileEnum(Enum):
     FOUNDATIONS = 0
     TABLEAU = 1
-    STOCK = 2    
+    STOCK = 2
 
 
 class CardColorEnum(Enum):
@@ -56,7 +56,7 @@ class Card:
         self.turned: bool = False
         self.is_active: bool = False
         curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_RED)
-        self.pile: str | None = None
+        self.pile: CardPileEnum | None = None
         self.drawn: bool = False
         self.x = None
         self.y = None
@@ -65,7 +65,7 @@ class Card:
         self,
         x: int = None,
         y: int = None,
-        pile: str | None = None,
+        pile: CardPileEnum | None = None,
         turned: bool = False,
     ):
         """Draws the card"""
@@ -122,8 +122,8 @@ class Card:
                 self.window.addch(self.y + height, self.x + width, curses.ACS_LRCORNER)
             except curses.error:
                 pass
-        except Exception as e:
-            logger.error(f"Error drawing card border: {e}")
+        except Exception:
+            logger.error("Error drawing card border", exc_info=True)
 
         # Draw card content
         if self.turned:
@@ -187,13 +187,15 @@ class Card:
 
     def turn(self):
         """Turns the card up.
-        
+
         (or down if it's turned and in stock pile)"""
-        if self.turned and self.pile == CardPileEnum.STOCK: # Card can't be turned down except for stockpile.
+        if (
+            self.turned and self.pile == CardPileEnum.STOCK
+        ):  # Card can't be turned down except for stockpile.
             self.turned = False
         elif not self.turned:
             self.turned = True
-        # Ignore all other 
+        # Ignore all other
 
     def redraw(self):
         self.undraw()
@@ -249,13 +251,13 @@ class Card:
             logger.error(str(self), exc_info=True)
 
     def color_check(self) -> str:
-        if self.color.value & 2 == 1:
+        if self.color.value % 2 == 1:
             return "black"
         else:
             return "red"
-        
+
     def change_piles(self, new_pile):
         self.pile = new_pile
-    
+
     def __str__(self):
         return f"Card: {self.color}, {self.num}"

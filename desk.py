@@ -1,10 +1,13 @@
 import curses
 import random
 import itertools
+import logging
 
 from piles import TableauPile, FoundationPile, StockPile
 from card import Card, CardColorEnum, CardNumberEnum, CardPileEnum
 
+
+logger = logging.getLogger()
 
 class Desk:
     """Class that's drawing the whole Tableau on the window."""
@@ -12,7 +15,7 @@ class Desk:
     cards: list[Card] = []
     foundation_piles: list[FoundationPile] = []
     tableau_piles: list[TableauPile] = []
-    piles = []
+    active_card: Card | None = None
 
     def __init__(self, window: curses.window):
         self.window = window
@@ -51,7 +54,6 @@ class Desk:
         # 1 StockPile instance
         self.stock_pile = StockPile(self.stock_cards)
 
-
     def initialize_tableau(self, cards: list[Card]):
         for i in range(7, 0, -1):
             lasted_cards = cards[:i]
@@ -72,51 +74,78 @@ class Desk:
 
         self.stock_pile.draw()
 
-    def draw(self):
-        """Drawing the desk's content (safe to use mid-game)"""
-        pass 
-
-    def active_card_search(self):
-        # Searching for active card
-        self.active_card = next(
-        (card for card in self.cards if card.is_active), None
-        )
-        return bool(self.active_card)
+    # def draw(self):
+    #     """Drawing the desk's content (safe to use mid-game)"""
+    #     pass
 
     def change_mouse_pos(self, mouse_x, mouse_y):
         self.mouse_x = mouse_x
         self.mouse_y = mouse_y
 
-    def try_activate_some_card(self):
+    def on_click(self, newx, newy):
+        self.change_mouse_pos(newx, newy)
+        if self.try_moving_active_card():
+            return
+        if self.try_deactivate_active_card():
+            return
+        if self.try_activate_some_card():
+            return
+        self.check_stockpile()
+    
+    def try_activate_some_card(self) -> bool:
+        if self.active_card:
+            return False
         for pile in self.tableau_piles:
-            pile.iterate_and_activate(self.mouse_x, self.mouse_y)
+            ac = pile.iterate_and_activate(self.mouse_x, self.mouse_y)
+            if ac:
+                self.active_card = ac
+                self.active_card_pile = pile
+                return True
         if self.stock_pile.is_turned_list_empty():
-            self.stock_pile.iterate_and_activate(self.mouse_x, self.mouse_y)
+            ac = self.stock_pile.try_activate(self.mouse_x, self.mouse_y)
+            if ac:
+                self.active_card = ac
+                self.active_card_pile = self.stock_pile
+                return True
+        return False
 
-    def try_moving_active_card(self):
-        for (
-            pile
-        ) in self.foundation_piles:  # Checking for click in foundation piles
+    def try_moving_active_card(self) -> bool:
+        if not self.active_card:
+            return False
+        
+        for pile in self.foundation_piles:  # Checking for click in foundation piles
             if pile.is_clicked(self.mouse_x, self.mouse_y):
-                pile.maybe_move(
-                    self.active_card
-                )  # Move the card if it's possible
-                # Reset the active card
-
-                self.active_card.change_piles(CardPileEnum.FOUNDATIONS)
-        for (
-            pile
-        ) in self.tableau_piles:  # Checking for click in Tableau piles...
+                if pile.can_move(self.active_card):  # Move the card if it's possible
+                    self.active_card_pile.move_to()
+                    pile.move_from_other_pile(self.active_card, 0, self.active_card_pile)
+                    self.active_card.change_piles(CardPileEnum.FOUNDATIONS)
+                    if self.active_card.pile == CardPileEnum.STOCK:
+                        self.stock_pile.draw_last_card()
+                    self.try_deactivate_active_card()
+                    return True
+        for pile in self.tableau_piles:  # Checking for click in Tableau piles...
             if pile.last_card_clicked(
                 self.mouse_x, self.mouse_y
             ):  # ...on the last card
-                pile.try_move_card(
+                if pile.can_move_card(
                     self.active_card
-                )  # Try to move the active card on the clicked one.
-                self.active_card.change_piles(CardPileEnum.TABLEAU)
+                ):  # Try to move the active card on the clicked one.
+                    self.active_card_pile.move_to()
+                    pile.move_from_other_pile(self.active_card, 3, self.active_card_pile)
+                    self.active_card.change_piles(CardPileEnum.TABLEAU)
+                    if self.active_card.pile == CardPileEnum.STOCK:
+                        self.stock_pile.draw_last_card()
+                    self.try_deactivate_active_card()
+                    return True
+        return False
+        # self.window.refresh()  # Refresh to show the active card
 
-        self.active_card.deactivate()
-        self.window.refresh()  # Refresh to show the active card
+    def try_deactivate_active_card(self) -> bool:
+        if self.active_card:
+            self.active_card.deactivate()
+            self.active_card = None
+            return True
+        return False
 
     def check_stockpile(self):
         if self.stock_pile.is_clicked(self.mouse_x, self.mouse_y):

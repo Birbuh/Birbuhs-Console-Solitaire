@@ -5,7 +5,7 @@ from card import Card, CardColorEnum
 
 class Pile:
     """Parent pile class"""
-
+    turned_card_list: list[Card] | None = None
     def __init__(self):
         self.card_list: list[Card] = []
         self.x = None
@@ -24,7 +24,7 @@ class Pile:
         return self.x <= x < (self.x + self.width) and self.y <= y < (
             self.y + self.height
         )
-    
+
     def is_in_card_list(self, card):
         return card in self.card_list
 
@@ -39,21 +39,29 @@ class Pile:
         raise NotImplementedError()
 
     # Moving the card methods
-    def move_to(self, pile_o, pile_str):
+    def move_to(self):
         if self.can_move_to():
             try:
-                next_card = self.card_list[-1]
-                self.card_list.remove(next_card)
+                if self.turned_card_list:
+                    next_card = self.turned_card_list[-1]
+                    self.turned_card_list.remove(next_card)
+                    self.turned_card_list[-1].turn()
+                    self.turned_card_list[-1].redraw()
+                else:
+                    next_card = self.card_list[-1]
+                    self.card_list.remove(next_card)
+                    self.card_list[-1].turn()
+                    self.card_list[-1].redraw()
                 next_card.undraw()
-                next_card.draw(pile_o.x, pile_o.y, pile_str, True)
+                
             except IndexError:
                 pass
 
-    def move_from_other_pile(self, card: Card, addy, pile_str):
+    def move_from_other_pile(self, card: Card, addy, pile_enum):
         if self.can_move_from():
             self.card_list.append(card)
             card.undraw()
-            card.draw(self.x, self.y + addy, pile_str, True)
+            card.draw(self.x, self.y + addy, pile_enum, True)
 
 
 class FoundationPile(Pile):
@@ -70,6 +78,8 @@ class FoundationPile(Pile):
             self.x -= 20
         elif color == CardColorEnum.CLUBS:
             self.x -= 10
+        # else:     # spades will have the default x.
+            # pass 
         self.color = color
 
     def draw(self):
@@ -100,27 +110,20 @@ class FoundationPile(Pile):
             int(self.y + self.height - 1), int(self.x + self.width / 2 - 1), suit_symbol
         )
 
-    def maybe_move(self, card: Card) -> bool:
+    def can_move(self, card: Card) -> bool:
         """Moves (if it's possible) a card to the Foundation pile."""
-        self.num = card.num.value
-        if self.num == 0:
-            return False
-        if self.num == 1:
-            if self.is_empty():
-                self.card_list.append(card)
-                card.undraw()
-                card.draw(self.x, self.y, False, True)
-                return True
-        else:
-            if self.num == self.card_list[self.num].num.value + 1:
-                self.card_list.append(card)
-                card.undraw()
-                self.card_list[self.num - 1].undraw()
-                card.draw(self.x, self.y, "Foundation", True)
-                return True
+        if self.color == card.color:
+            num_val = card.num.value
+            if num_val == 1:
+                if self.is_empty():
+                    return True
             else:
-                return False
-
+                try:
+                    if num_val == self.card_list[-1].num.value + 1:
+                        return True
+                except IndexError:
+                    pass
+        return False
     # Method override
     def can_move_from(self):
         return True
@@ -129,8 +132,8 @@ class FoundationPile(Pile):
 class TableauPile(Pile):
     """
     Simple class for one of the 7 main piles.
-    card_list: list[Card]; that is a list filled with the cards that belong in the pile.
-    x: int; coordinate of the pile on the x axis
+    :param card_list: list[Card]; that is a list filled with the cards that belong in the pile.
+    :param x: int; coordinate of the pile on the x axis
     """
 
     def __init__(self, card_list: list[Card], x: int):
@@ -146,22 +149,19 @@ class TableauPile(Pile):
             else:
                 card.draw(self.x, 20 + i * 2, "Tableau", False)
 
-    def try_move_card(self, card: Card):
-        last_card = self.card_list[-1]
+    def can_move_card(self, card: Card) -> bool:
+        last_card = self.card_list[0]
         if card.num.value == last_card.num.value + 1 and (
             card.color_check() != last_card.color_check()
         ):
-            self.card_list.append(card)
-            card.undraw()
-            card.draw(last_card.x, last_card.y + 4)
-            card.pile = "Tableau"
+            return True
+        return False
 
     def iterate_and_activate(self, mouse_x, mouse_y) -> bool:
         for card in self.card_list:
             if card.is_clicked(mouse_x, mouse_y) and card.turned:
                 card.activate()
-                return True
-        return False
+                return card
 
     # Method override
     def can_move_to(self) -> bool:
@@ -235,7 +235,7 @@ class StockPile(Pile):
 
         else:  # Reset the pile - move all turned cards back to stock pile
             cards_to_move = list(self.turned_card_list)
-            for card in cards_to_move:
+            for card in cards_to_move[:-1]:
                 card.undraw()
                 card.draw(self.x, self.y, "Stock", False)
                 self.card_list.append(card)
@@ -244,13 +244,14 @@ class StockPile(Pile):
     def is_turned_list_empty(self):
         return any(self.turned_card_list)
 
-    def iterate_and_activate(self, mouse_x, mouse_y) -> bool:
+    def draw_last_card(self):
+        self.turned_card_list[-1].draw()
+
+    def try_activate(self, mouse_x, mouse_y) -> bool:
         card = self.turned_card_list[-1]
         if card.is_clicked(mouse_x, mouse_y):
             card.activate()
-            return True
-        else:
-            return False
+            return card
 
     def can_move_to(self):
         return True
