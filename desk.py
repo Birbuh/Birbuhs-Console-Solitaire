@@ -74,10 +74,6 @@ class Desk:
 
         self.stock_pile.draw()
 
-    # def draw(self):
-    #     """Drawing the desk's content (safe to use mid-game)"""
-    #     pass
-
     def change_mouse_pos(self, mouse_x, mouse_y):
         self.mouse_x = mouse_x
         self.mouse_y = mouse_y
@@ -123,6 +119,7 @@ class Desk:
                         self.stock_pile.draw_last_card()
                     self.try_deactivate_active_card()
                     return True
+                
         for pile in self.tableau_piles:  # Checking for click in Tableau piles...
             if pile.last_card_clicked(
                 self.mouse_x, self.mouse_y
@@ -131,7 +128,7 @@ class Desk:
                     self.active_card
                 ):  # Try to move the active card on the clicked one.
                     self.active_card_pile.move_to()
-                    pile.move_from_other_pile(self.active_card, 3, self.active_card_pile)
+                    pile.move_from_other_pile(self.active_card, pile.last_card_relative_y() + 3, self.active_card_pile)
                     self.active_card.change_piles(CardPileEnum.TABLEAU)
                     if self.active_card.pile == CardPileEnum.STOCK:
                         self.stock_pile.draw_last_card()

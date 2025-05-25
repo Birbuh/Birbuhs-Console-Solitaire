@@ -252,8 +252,10 @@ class Card:
 
     def color_check(self) -> str:
         if self.color.value % 2 == 1:
+            logger.debug("####### it's a black card!")
             return "black"
         else:
+            logger.debug("### it's a red card!")
             return "red"
 
     def change_piles(self, new_pile):

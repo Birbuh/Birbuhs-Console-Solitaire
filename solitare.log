@@ -1,0 +1,588 @@
+2025-05-25 14:05 - DEBUG: Activating the card: A♦
+2025-05-25 14:05 - DEBUG: Deactivating the card A♦
+2025-05-25 14:05 - DEBUG: Activating the card: A♣
+2025-05-25 14:05 - DEBUG: Deactivating the card A♣
+2025-05-25 14:05 - DEBUG: Activating the card: 7♦
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: Deactivating the card 7♦
+2025-05-25 14:05 - DEBUG: Activating the card: 2♣
+2025-05-25 14:05 - DEBUG: Deactivating the card 2♣
+2025-05-25 14:05 - DEBUG: Activating the card: K♦
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: Deactivating the card K♦
+2025-05-25 14:05 - DEBUG: Activating the card: J♦
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: Deactivating the card J♦
+2025-05-25 14:05 - DEBUG: Activating the card: Q♠
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: False
+2025-05-25 14:05 - DEBUG: True
+2025-05-25 14:05 - DEBUG: ####### it's a black card!
+2025-05-25 14:05 - DEBUG: ### it's a red card!
+2025-05-25 14:05 - DEBUG: Deactivating the card Q♠
+2025-05-25 14:06 - DEBUG: Activating the card: J♣
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: True
+2025-05-25 14:06 - DEBUG: Deactivating the card J♣
+2025-05-25 14:06 - DEBUG: Activating the card: J♦
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: True
+2025-05-25 14:06 - DEBUG: ### it's a red card!
+2025-05-25 14:06 - DEBUG: ####### it's a black card!
+2025-05-25 14:06 - DEBUG: Deactivating the card J♦
+2025-05-25 14:06 - DEBUG: Activating the card: 9♥
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: Deactivating the card 9♥
+2025-05-25 14:06 - DEBUG: Activating the card: 2♥
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: Deactivating the card 2♥
+2025-05-25 14:06 - DEBUG: Activating the card: 10♥
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: True
+2025-05-25 14:06 - DEBUG: ### it's a red card!
+2025-05-25 14:06 - DEBUG: ####### it's a black card!
+2025-05-25 14:06 - DEBUG: Deactivating the card 10♥
+2025-05-25 14:06 - DEBUG: Activating the card: A♠
+2025-05-25 14:06 - DEBUG: Deactivating the card A♠
+2025-05-25 14:06 - DEBUG: Activating the card: 8♦
+2025-05-25 14:06 - DEBUG: True
+2025-05-25 14:06 - DEBUG: ### it's a red card!
+2025-05-25 14:06 - DEBUG: ####### it's a black card!
+2025-05-25 14:06 - DEBUG: Deactivating the card 8♦
+2025-05-25 14:06 - DEBUG: Activating the card: 7♦
+2025-05-25 14:06 - DEBUG: True
+2025-05-25 14:06 - DEBUG: ### it's a red card!
+2025-05-25 14:06 - DEBUG: ### it's a red card!
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: Deactivating the card 7♦
+2025-05-25 14:06 - DEBUG: Activating the card: 7♦
+2025-05-25 14:06 - DEBUG: True
+2025-05-25 14:06 - DEBUG: ### it's a red card!
+2025-05-25 14:06 - DEBUG: ### it's a red card!
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: False
+2025-05-25 14:06 - DEBUG: Deactivating the card 7♦
+2025-05-25 14:07 - DEBUG: Activating the card: 9♣
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: True
+2025-05-25 14:07 - DEBUG: ####### it's a black card!
+2025-05-25 14:07 - DEBUG: ### it's a red card!
+2025-05-25 14:07 - DEBUG: Deactivating the card 9♣
+2025-05-25 14:07 - DEBUG: Activating the card: 9♣
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: Deactivating the card 9♣
+2025-05-25 14:07 - DEBUG: Activating the card: 6♥
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: Deactivating the card 6♥
+2025-05-25 14:07 - DEBUG: Activating the card: 8♣
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: True
+2025-05-25 14:07 - DEBUG: ####### it's a black card!
+2025-05-25 14:07 - DEBUG: ### it's a red card!
+2025-05-25 14:07 - DEBUG: Deactivating the card 8♣
+2025-05-25 14:07 - DEBUG: Activating the card: 7♦
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: True
+2025-05-25 14:07 - DEBUG: ### it's a red card!
+2025-05-25 14:07 - DEBUG: ####### it's a black card!
+2025-05-25 14:07 - DEBUG: Deactivating the card 7♦
+2025-05-25 14:07 - DEBUG: Activating the card: 6♠
+2025-05-25 14:07 - DEBUG: False
+2025-05-25 14:07 - DEBUG: True
+2025-05-25 14:07 - DEBUG: ####### it's a black card!
+2025-05-25 14:07 - DEBUG: ### it's a red card!
+2025-05-25 14:07 - DEBUG: Deactivating the card 6♠
+2025-05-25 14:07 - DEBUG: Activating the card: A♥
+2025-05-25 14:07 - DEBUG: Deactivating the card A♥
+2025-05-25 14:10 - DEBUG: Activating the card: 5♣
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: True
+2025-05-25 14:10 - DEBUG: ####### it's a black card!
+2025-05-25 14:10 - DEBUG: ####### it's a black card!
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: Deactivating the card 5♣
+2025-05-25 14:10 - DEBUG: Activating the card: 4♦
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: False
+2025-05-25 14:10 - DEBUG: True
+2025-05-25 14:10 - DEBUG: ### it's a red card!
+2025-05-25 14:10 - DEBUG: ####### it's a black card!
+2025-05-25 14:10 - DEBUG: Deactivating the card 4♦
+2025-05-25 14:10 - DEBUG: Activating the card: A♦
+2025-05-25 14:10 - DEBUG: Deactivating the card A♦
+2025-05-25 14:10 - DEBUG: Activating the card: 2♠
+2025-05-25 14:11 - DEBUG: False
+2025-05-25 14:11 - DEBUG: False
+2025-05-25 14:11 - DEBUG: False
+2025-05-25 14:11 - DEBUG: False
+2025-05-25 14:11 - DEBUG: False
+2025-05-25 14:11 - DEBUG: False
+2025-05-25 14:11 - DEBUG: False
+2025-05-25 14:11 - DEBUG: Deactivating the card 2♠
+2025-05-25 14:11 - DEBUG: Activating the card: Q♠
+2025-05-25 14:11 - DEBUG: True
+2025-05-25 14:11 - DEBUG: ####### it's a black card!
+2025-05-25 14:11 - DEBUG: ### it's a red card!
+2025-05-25 14:11 - DEBUG: Deactivating the card Q♠
+2025-05-25 14:12 - DEBUG: Activating the card: 5♠
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: True
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: True
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: Deactivating the card 5♠
+2025-05-25 14:12 - DEBUG: Activating the card: Q♣
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: True
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: True
+2025-05-25 14:12 - DEBUG: Deactivating the card Q♣
+2025-05-25 14:12 - DEBUG: Activating the card: A♣
+2025-05-25 14:12 - DEBUG: Deactivating the card A♣
+2025-05-25 14:12 - DEBUG: Activating the card: 10♣
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: Deactivating the card 10♣
+2025-05-25 14:12 - DEBUG: Activating the card: 2♠
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: True
+2025-05-25 14:12 - DEBUG: ####### it's a black card!
+2025-05-25 14:12 - DEBUG: ### it's a red card!
+2025-05-25 14:12 - DEBUG: Deactivating the card 2♠
+2025-05-25 14:12 - DEBUG: Activating the card: K♦
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: Deactivating the card K♦
+2025-05-25 14:12 - DEBUG: Activating the card: K♦
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: Deactivating the card K♦
+2025-05-25 14:12 - DEBUG: Activating the card: K♦
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: False
+2025-05-25 14:12 - DEBUG: Deactivating the card K♦
+2025-05-25 14:14 - DEBUG: Activating the card: 4♦
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: True
+2025-05-25 14:14 - DEBUG: ### it's a red card!
+2025-05-25 14:14 - DEBUG: ####### it's a black card!
+2025-05-25 14:14 - DEBUG: Deactivating the card 4♦
+2025-05-25 14:14 - DEBUG: Activating the card: 3♠
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: True
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: Deactivating the card 3♠
+2025-05-25 14:14 - DEBUG: Activating the card: 3♠
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: True
+2025-05-25 14:14 - DEBUG: ####### it's a black card!
+2025-05-25 14:14 - DEBUG: ### it's a red card!
+2025-05-25 14:14 - DEBUG: Deactivating the card 3♠
+2025-05-25 14:14 - DEBUG: Activating the card: 3♣
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: True
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: Deactivating the card 3♣
+2025-05-25 14:14 - DEBUG: Activating the card: 8♦
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: Deactivating the card 8♦
+2025-05-25 14:14 - DEBUG: Activating the card: 2♠
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: True
+2025-05-25 14:14 - DEBUG: ####### it's a black card!
+2025-05-25 14:14 - DEBUG: ####### it's a black card!
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: False
+2025-05-25 14:14 - DEBUG: Deactivating the card 2♠
+2025-05-25 14:15 - DEBUG: Activating the card: J♦
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: True
+2025-05-25 14:15 - DEBUG: ### it's a red card!
+2025-05-25 14:15 - DEBUG: ####### it's a black card!
+2025-05-25 14:15 - DEBUG: Deactivating the card J♦
+2025-05-25 14:15 - DEBUG: Activating the card: 8♣
+2025-05-25 14:15 - DEBUG: True
+2025-05-25 14:15 - DEBUG: ####### it's a black card!
+2025-05-25 14:15 - DEBUG: ### it's a red card!
+2025-05-25 14:15 - DEBUG: Deactivating the card 8♣
+2025-05-25 14:15 - DEBUG: Activating the card: 7♦
+2025-05-25 14:15 - DEBUG: True
+2025-05-25 14:15 - DEBUG: ### it's a red card!
+2025-05-25 14:15 - DEBUG: ####### it's a black card!
+2025-05-25 14:15 - DEBUG: Deactivating the card 7♦
+2025-05-25 14:15 - DEBUG: Activating the card: Q♥
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: Deactivating the card Q♥
+2025-05-25 14:15 - DEBUG: Activating the card: J♣
+2025-05-25 14:15 - DEBUG: False
+2025-05-25 14:15 - DEBUG: True
+2025-05-25 14:15 - DEBUG: ####### it's a black card!
+2025-05-25 14:15 - DEBUG: ### it's a red card!
+2025-05-25 14:15 - DEBUG: Deactivating the card J♣
+2025-05-25 14:16 - DEBUG: Activating the card: 10♦
+2025-05-25 14:16 - DEBUG: False
+2025-05-25 14:16 - DEBUG: True
+2025-05-25 14:16 - DEBUG: ### it's a red card!
+2025-05-25 14:16 - DEBUG: ####### it's a black card!
+2025-05-25 14:16 - DEBUG: Deactivating the card 10♦
+2025-05-25 14:16 - DEBUG: Activating the card: A♣
+2025-05-25 14:16 - DEBUG: Deactivating the card A♣
+2025-05-25 14:16 - DEBUG: Activating the card: 2♣
+2025-05-25 14:16 - DEBUG: Deactivating the card 2♣
+2025-05-25 14:16 - DEBUG: Activating the card: 9♠
+2025-05-25 14:16 - DEBUG: False
+2025-05-25 14:16 - DEBUG: True
+2025-05-25 14:16 - DEBUG: ####### it's a black card!
+2025-05-25 14:16 - DEBUG: ### it's a red card!
+2025-05-25 14:16 - DEBUG: Deactivating the card 9♠
+2025-05-25 14:16 - DEBUG: Activating the card: 8♥
+2025-05-25 14:16 - DEBUG: False
+2025-05-25 14:16 - DEBUG: True
+2025-05-25 14:16 - DEBUG: ### it's a red card!
+2025-05-25 14:16 - DEBUG: ####### it's a black card!
+2025-05-25 14:16 - DEBUG: Deactivating the card 8♥
+2025-05-25 14:17 - DEBUG: Activating the card: 7♥
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: Deactivating the card 7♥
+2025-05-25 14:17 - DEBUG: Activating the card: 2♠
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: False
+2025-05-25 14:17 - DEBUG: Deactivating the card 2♠
+2025-05-25 14:18 - ERROR: Error drawing card border
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/card.py", line 89, in draw
+    self.window.addch(self.y, self.x + i, curses.ACS_HLINE)
+                              ~~~~~~~^~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+2025-05-25 14:18 - ERROR: An error occurred: unsupported operand type(s) for +: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/main.py", line 45, in <module>
+    curses.wrapper(main)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/curses/__init__.py", line 94, in wrapper
+    return func(stdscr, *args, **kwds)
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/main.py", line 33, in main
+    game.game()
+    ~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 66, in game
+    desk.init_draw()
+    ~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 75, in init_draw
+    self.stock_pile.draw()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 200, in draw
+    card.draw(self.x, self.y, "Stock", False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/card.py", line 143, in draw
+    self.window.addstr(self.y + 1, self.x + 1, "~~~~")
+                       ~~~~~~~^~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+2025-05-25 14:20 - DEBUG: Activating the card: 8♥
+2025-05-25 14:20 - DEBUG: False
+2025-05-25 14:20 - DEBUG: True
+2025-05-25 14:20 - DEBUG: ### it's a red card!
+2025-05-25 14:20 - DEBUG: ####### it's a black card!
+2025-05-25 14:20 - DEBUG: Deactivating the card 8♥
+2025-05-25 14:21 - DEBUG: Activating the card: A♣
+2025-05-25 14:21 - DEBUG: Deactivating the card A♣
+2025-05-25 14:21 - DEBUG: Activating the card: 5♥
+2025-05-25 14:21 - DEBUG: True
+2025-05-25 14:21 - DEBUG: ### it's a red card!
+2025-05-25 14:21 - DEBUG: ####### it's a black card!
+2025-05-25 14:21 - DEBUG: Deactivating the card 5♥
+2025-05-25 14:22 - DEBUG: Activating the card: A♣
+2025-05-25 14:22 - DEBUG: Deactivating the card A♣
+2025-05-25 14:22 - DEBUG: Activating the card: J♠
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: Deactivating the card J♠
+2025-05-25 14:22 - DEBUG: Activating the card: J♠
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: True
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: Deactivating the card J♠
+2025-05-25 14:22 - DEBUG: Activating the card: 7♠
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: True
+2025-05-25 14:22 - DEBUG: Deactivating the card 7♠
+2025-05-25 14:22 - DEBUG: Activating the card: 7♠
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: False
+2025-05-25 14:22 - DEBUG: True
+2025-05-25 14:22 - DEBUG: ####### it's a black card!
+2025-05-25 14:22 - DEBUG: ### it's a red card!
+2025-05-25 14:22 - DEBUG: Deactivating the card 7♠
+2025-05-25 14:23 - DEBUG: Activating the card: A♣
+2025-05-25 14:23 - DEBUG: Deactivating the card A♣
+2025-05-25 14:23 - DEBUG: Activating the card: 7♠
+2025-05-25 14:23 - DEBUG: False
+2025-05-25 14:23 - DEBUG: False
+2025-05-25 14:23 - DEBUG: False
+2025-05-25 14:23 - DEBUG: True
+2025-05-25 14:23 - DEBUG: ####### it's a black card!
+2025-05-25 14:23 - DEBUG: ### it's a red card!
+2025-05-25 14:23 - DEBUG: Deactivating the card 7♠
+2025-05-25 14:23 - DEBUG: Activating the card: 3♣
+2025-05-25 14:23 - DEBUG: True
+2025-05-25 14:23 - DEBUG: ####### it's a black card!
+2025-05-25 14:23 - DEBUG: ### it's a red card!
+2025-05-25 14:23 - DEBUG: Deactivating the card 3♣
+2025-05-25 14:24 - DEBUG: Activating the card: 8♣
+2025-05-25 14:24 - DEBUG: False
+2025-05-25 14:24 - DEBUG: True
+2025-05-25 14:24 - DEBUG: ####### it's a black card!
+2025-05-25 14:24 - DEBUG: ### it's a red card!
+2025-05-25 14:24 - DEBUG: Deactivating the card 8♣
+2025-05-25 14:24 - DEBUG: Activating the card: A♥
+2025-05-25 14:24 - DEBUG: Deactivating the card A♥
+2025-05-25 14:24 - DEBUG: Activating the card: 7♦
+2025-05-25 14:24 - DEBUG: False
+2025-05-25 14:24 - DEBUG: True
+2025-05-25 14:24 - DEBUG: ### it's a red card!
+2025-05-25 14:24 - DEBUG: ####### it's a black card!
+2025-05-25 14:24 - DEBUG: Deactivating the card 7♦
+2025-05-25 14:25 - DEBUG: Activating the card: 5♣
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: True
+2025-05-25 14:25 - DEBUG: ####### it's a black card!
+2025-05-25 14:25 - DEBUG: ### it's a red card!
+2025-05-25 14:25 - DEBUG: Deactivating the card 5♣
+2025-05-25 14:25 - DEBUG: Activating the card: 2♥
+2025-05-25 14:25 - DEBUG: Deactivating the card 2♥
+2025-05-25 14:25 - DEBUG: Activating the card: A♣
+2025-05-25 14:25 - DEBUG: Deactivating the card A♣
+2025-05-25 14:25 - DEBUG: Activating the card: 9♥
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: True
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: Deactivating the card 9♥
+2025-05-25 14:25 - DEBUG: Activating the card: 9♥
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: True
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: Deactivating the card 9♥
+2025-05-25 14:25 - DEBUG: Activating the card: 8♠
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: Deactivating the card 8♠
+2025-05-25 14:25 - DEBUG: Activating the card: 9♥
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: True
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: Deactivating the card 9♥
+2025-05-25 14:25 - DEBUG: Activating the card: 8♠
+2025-05-25 14:25 - DEBUG: True
+2025-05-25 14:25 - DEBUG: ####### it's a black card!
+2025-05-25 14:25 - DEBUG: ### it's a red card!
+2025-05-25 14:25 - DEBUG: Deactivating the card 8♠
+2025-05-25 14:25 - DEBUG: Activating the card: 8♥
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: Deactivating the card 8♥
+2025-05-25 14:25 - DEBUG: Activating the card: 8♦
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: Deactivating the card 8♦
+2025-05-25 14:25 - DEBUG: Activating the card: 10♠
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: False
+2025-05-25 14:25 - DEBUG: Deactivating the card 10♠

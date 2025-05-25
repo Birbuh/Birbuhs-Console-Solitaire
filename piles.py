@@ -1,7 +1,10 @@
 import curses
+import logging
 
-from card import Card, CardColorEnum
+from card import Card, CardColorEnum, CardNumberEnum
 
+
+logger = logging.getLogger()
 
 class Pile:
     """Parent pile class"""
@@ -29,8 +32,11 @@ class Pile:
         return card in self.card_list
 
     def last_card_clicked(self, x, y):
-        return self.card_list[-1].is_clicked(x, y)
-
+        try:
+            logger.debug(self.card_list[-1].is_clicked(x, y))
+            return self.card_list[-1].is_clicked(x, y)
+        except IndexError:
+            return False
     # Interface methods
     def can_move_to(self):
         raise NotImplementedError()
@@ -71,7 +77,7 @@ class FoundationPile(Pile):
         super().__init__()
         self.window = window
         self.x = 112
-        self.y = 5
+        self.y = 1
         if color == CardColorEnum.HEARTS:
             self.x -= 30
         elif color == CardColorEnum.DIAMONDS:
@@ -140,21 +146,25 @@ class TableauPile(Pile):
         super().__init__()
         self.card_list = card_list
         self.x = x
-        self.y = 20
+        self.y = 9
 
     def draw(self):
         for i, card in enumerate(self.card_list):
             if i == len(self.card_list) - 1:  # Last card should be face up
-                card.draw(self.x, 20 + i * 2, "Tableau", True)
+                card.draw(self.x, self.y + i * 2, "Tableau", True)
             else:
-                card.draw(self.x, 20 + i * 2, "Tableau", False)
+                card.draw(self.x, self.y + i * 2, "Tableau", False)
 
     def can_move_card(self, card: Card) -> bool:
-        last_card = self.card_list[0]
-        if card.num.value == last_card.num.value + 1 and (
-            card.color_check() != last_card.color_check()
-        ):
-            return True
+        try:
+            last_card = self.card_list[-1]
+            if card.num.value == last_card.num.value - 1 and (
+                card.color_check() != last_card.color_check()
+            ):
+                return True
+        except IndexError:
+            if card.num == CardNumberEnum.KING:
+                return True
         return False
 
     def iterate_and_activate(self, mouse_x, mouse_y) -> bool:
@@ -162,6 +172,9 @@ class TableauPile(Pile):
             if card.is_clicked(mouse_x, mouse_y) and card.turned:
                 card.activate()
                 return card
+
+    def last_card_relative_y(self):
+        return (self.card_list[-1].y - 9)
 
     # Method override
     def can_move_to(self) -> bool:
@@ -178,7 +191,7 @@ class StockPile(Pile):
         super().__init__()
         self.card_list = card_list
         self.x = 40
-        self.y = 5
+        self.y = 1
         self.turned_card_list: list[Card] = []
 
     def draw(self):
