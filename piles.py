@@ -1,7 +1,7 @@
 import curses
 import logging
 
-from card import Card, CardColorEnum, CardNumberEnum
+from card import Card, CardColorEnum, CardPileEnum
 
 
 logger = logging.getLogger()
@@ -15,6 +15,7 @@ class Pile:
         self.y = None
         self.width = 8
         self.height = 6
+        self.window: curses.window = NotImplemented
 
     def is_empty(self) -> bool:
         if self.card_list:
@@ -22,21 +23,50 @@ class Pile:
         else:
             return True
 
+    def is_last_card(self, card):
+        try:
+            return card == self.card_list[-1]
+        except IndexError:
+            return False
+        
     def is_clicked(self, x, y) -> bool:
         """Checking for a click in the pile."""
-        return self.x <= x < (self.x + self.width) and self.y <= y < (
-            self.y + self.height
-        )
+        return (self.x <= x < (self.x + self.width)) and ( 
+            self.y <= y < (self.y + self.height)
+            )
 
+    def draw_empty(self):
+        if not any(self.card_list):
+            for i in range(self.width):
+                self.window.addch(self.y, self.x + i, curses.ACS_HLINE)
+                self.window.addch(self.y + self.height, self.x + i, curses.ACS_HLINE)
+            for i in range(self.height):
+                self.window.addch(self.y + i, self.x, curses.ACS_VLINE)
+                self.window.addch(self.y + i, self.x + self.width, curses.ACS_VLINE)
+            self.window.addch(self.y, self.x, curses.ACS_ULCORNER)
+            self.window.addch(self.y, self.x + self.width, curses.ACS_URCORNER)
+            self.window.addch(self.y + self.height, self.x, curses.ACS_LLCORNER)
+            self.window.addch(self.y + self.height, self.x + self.width, curses.ACS_LRCORNER)
+
+    def is_a_stock_pile(self) -> bool:
+        if self.turned_card_list:
+            return any(self.turned_card_list)
+        try:
+            self.can_move_from()
+            return False
+        except NotImplementedError:
+            return True
+            
+        
     def is_in_card_list(self, card):
         return card in self.card_list
 
-    def last_card_clicked(self, x, y):
+    def pile_or_card_clicked(self, x, y):
         try:
-            logger.debug(self.card_list[-1].is_clicked(x, y))
             return self.card_list[-1].is_clicked(x, y)
         except IndexError:
-            return False
+            return self.is_clicked(x, y)
+        
     # Interface methods
     def can_move_to(self):
         raise NotImplementedError()
@@ -45,25 +75,33 @@ class Pile:
         raise NotImplementedError()
 
     # Moving the card methods
-    def move_to(self):
-        if self.can_move_to():
-            try:
-                if self.turned_card_list:
-                    next_card = self.turned_card_list[-1]
-                    self.turned_card_list.remove(next_card)
-                    self.turned_card_list[-1].turn()
-                    self.turned_card_list[-1].redraw()
+    def move_to(self, count: int = -1):
+        if self.can_move_to(): 
+            if self.turned_card_list:
+                next_card = self.turned_card_list[-1]
+                self.turned_card_list.remove(next_card)
+                self.turned_card_list[-1].turn()
+                self.turned_card_list[-1].redraw()
+            else:
+                if count == -1:
+                    try:
+                        next_card = self.card_list[-1]
+                        self.card_list.remove(next_card)
+                        self.card_list[-1].turn()
+                        self.card_list[-1].redraw()
+                        next_card.undraw()
+                    except IndexError:
+                        pass
                 else:
-                    next_card = self.card_list[-1]
-                    self.card_list.remove(next_card)
-                    self.card_list[-1].turn()
-                    self.card_list[-1].redraw()
-                next_card.undraw()
-                
-            except IndexError:
-                pass
+                    try:
+                        next_card = self.card_list[count]
+                        self.card_list.remove(next_card)
+                        self.card_list[-1 + count].turn()
+                        self.card_list[-1 + count].redraw()
+                    except Exception:
+                        logger.error("Transfer of multiple cards went wrong.", exc_info = True)
 
-    def move_from_other_pile(self, card: Card, addy, pile_enum):
+    def move_from_other_pile(self, addy, pile_enum, card: Card | None):
         if self.can_move_from():
             self.card_list.append(card)
             card.undraw()
@@ -75,18 +113,19 @@ class FoundationPile(Pile):
 
     def __init__(self, window: curses.window, color):
         super().__init__()
-        self.window = window
         self.x = 112
         self.y = 1
-        if color == CardColorEnum.HEARTS:
+        self.window = window
+        self.color = color
+        if self.color == CardColorEnum.HEARTS:
             self.x -= 30
-        elif color == CardColorEnum.DIAMONDS:
+        elif self.color == CardColorEnum.DIAMONDS:
             self.x -= 20
-        elif color == CardColorEnum.CLUBS:
+        elif self.color == CardColorEnum.CLUBS:
             self.x -= 10
         # else:     # spades will have the default x.
             # pass 
-        self.color = color
+
 
     def draw(self):
         """Draws the Foundation piles."""
@@ -142,20 +181,26 @@ class TableauPile(Pile):
     :param x: int; coordinate of the pile on the x axis
     """
 
-    def __init__(self, card_list: list[Card], x: int):
+    def __init__(self, card_list: list[Card], x: int, window: curses.window):
         super().__init__()
         self.card_list = card_list
+        self.window = window
         self.x = x
         self.y = 9
 
     def draw(self):
         for i, card in enumerate(self.card_list):
             if i == len(self.card_list) - 1:  # Last card should be face up
-                card.draw(self.x, self.y + i * 2, "Tableau", True)
+                card.draw(self.x, self.y + i * 2, CardPileEnum.TABLEAU, True)
             else:
-                card.draw(self.x, self.y + i * 2, "Tableau", False)
+                card.draw(self.x, self.y + i * 2, CardPileEnum.TABLEAU, False)
 
-    def can_move_card(self, card: Card) -> bool:
+    def return_next_cards(self, card: Card) -> list[Card]:
+        if card in self.card_list:
+            card_index = self.card_list.index(card)
+            return self.card_list[card_index:]
+
+    def can_move_card(self, card: Card | None, cards: list[Card] | None = None) -> bool:
         try:
             last_card = self.card_list[-1]
             if card.num.value == last_card.num.value - 1 and (
@@ -163,7 +208,7 @@ class TableauPile(Pile):
             ):
                 return True
         except IndexError:
-            if card.num == CardNumberEnum.KING:
+            if card.num.value == 13: # King
                 return True
         return False
 
@@ -187,9 +232,10 @@ class TableauPile(Pile):
 class StockPile(Pile):
     """Pile in which you have the rest of the cards"""
 
-    def __init__(self, card_list: list[Card]):
+    def __init__(self, card_list: list[Card], window: curses.window):
         super().__init__()
         self.card_list = card_list
+        self.window = window
         self.x = 40
         self.y = 1
         self.turned_card_list: list[Card] = []
@@ -197,21 +243,9 @@ class StockPile(Pile):
     def draw(self):
         """Drawing..."""
         for card in self.card_list:
-            card.draw(self.x, self.y, "Stock", False)
+            card.draw(self.x, self.y, CardPileEnum.STOCK, False)
 
-    def draw_empty(self, window: curses.window):
-        for i in range(self.width):
-            window.addch(self.y, self.x + i, curses.ACS_HLINE)
-            window.addch(self.y + self.height, self.x + i, curses.ACS_HLINE)
-        for i in range(self.height):
-            window.addch(self.y + i, self.x, curses.ACS_VLINE)
-            window.addch(self.y + i, self.x + self.width, curses.ACS_VLINE)
-        window.addch(self.y, self.x, curses.ACS_ULCORNER)
-        window.addch(self.y, self.x + self.width, curses.ACS_URCORNER)
-        window.addch(self.y + self.height, self.x, curses.ACS_LLCORNER)
-        window.addch(self.y + self.height, self.x + self.width, curses.ACS_LRCORNER)
-
-    def check_card(self, window: curses.window):
+    def check_card(self):
         """
         Turning the first (technically last) card of the stockpile.
         If card_list is empty, draw_empty(), and in the next click all of the cards will go back to it's place.
@@ -235,22 +269,22 @@ class StockPile(Pile):
 
             # Draw the next card in the stock pile or empty pile
             if next_card:
-                next_card.draw(self.x, self.y, "Stock", False)
+                next_card.draw(self.x, self.y, CardPileEnum.STOCK, False)
             else:
-                self.draw_empty(window)
+                self.draw_empty()
 
             # Undraw previous turned card if exists
             if turned_card:
                 turned_card.undraw()
 
             # Draw the newly turned card
-            card.draw(self.x + 10, self.y, "Stock", True)
+            card.draw(self.x + 10, self.y, CardPileEnum.STOCK, True)
 
         else:  # Reset the pile - move all turned cards back to stock pile
-            cards_to_move = list(self.turned_card_list)
-            for card in cards_to_move[:-1]:
+            cards_to_move = reversed(list(self.turned_card_list))
+            for card in cards_to_move:
                 card.undraw()
-                card.draw(self.x, self.y, "Stock", False)
+                card.draw(self.x, self.y, CardPileEnum.STOCK, False)
                 self.card_list.append(card)
                 self.turned_card_list.remove(card)
 

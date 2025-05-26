@@ -66,8 +66,8 @@ class Game:
         desk.init_draw()
 
         # Game instructions
-        self.stdscr.addstr(2, 10, "Solitaire Game")
-        self.stdscr.addstr(3, 10, "(double) Press 'q' to quit")
+        self.stdscr.addstr(2, 7, "Solitaire Game")
+        self.stdscr.addstr(3, 7, "(double) Press 'q' to quit")
 
         # Start time.time()
         start_time = time.time()
@@ -79,7 +79,7 @@ class Game:
             elapsed_mins = (time.time() - start_time) / 60
             self.stdscr.addstr(
                 4,
-                10,
+                7,
                 f"your time: {int(elapsed_mins)} minutes {int((elapsed_mins % 1) * 60)} seconds",
             )
 
@@ -92,7 +92,6 @@ class Game:
                         _, mouse_x, mouse_y, _, _ = curses.getmouse()  # get mouse pos
                         if restart_button.is_clicked(mouse_x, mouse_y):
                             # Restart the game
-                            self.stdscr.clear()
                             return self.game()
                         desk.on_click(mouse_x, mouse_y)
                         self.stdscr.refresh()

@@ -153,6 +153,9 @@ class Card:
         self.window.refresh()
         self.drawn = True
 
+    def is_a_king(self) -> bool:
+        return self.num.value == 13
+
     def undraw(self):
         for i in range(self.height + 1):
             self.window.move(self.y + i, self.x)
@@ -201,10 +204,12 @@ class Card:
         self.undraw()
         self.draw(self.x, self.y, self.pile, self.turned)
 
+    def return_pile(self):
+        return self.pile.name 
+
     def activate(self):
         """Makes the card active and marking it red"""
         try:
-            logger.debug(f"Activating the card: {self.get_symbol()}")
             self.is_active = True
             # Fill the card with colored background - safely
             for y in range(self.y + 2, self.y + self.height - 1):
@@ -221,7 +226,6 @@ class Card:
     def deactivate(self):
         """Restoring the card to it's original state."""
         try:
-            logger.debug(f"Deactivating the card {self.get_symbol()}")
             self.is_active = False
             # Clearing the red background
             for y in range(self.y + 2, self.y + self.height - 1):
@@ -252,10 +256,8 @@ class Card:
 
     def color_check(self) -> str:
         if self.color.value % 2 == 1:
-            logger.debug("####### it's a black card!")
             return "black"
         else:
-            logger.debug("### it's a red card!")
             return "red"
 
     def change_piles(self, new_pile):

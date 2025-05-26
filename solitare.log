@@ -1,588 +1,567 @@
-2025-05-25 14:05 - DEBUG: Activating the card: A♦
-2025-05-25 14:05 - DEBUG: Deactivating the card A♦
-2025-05-25 14:05 - DEBUG: Activating the card: A♣
-2025-05-25 14:05 - DEBUG: Deactivating the card A♣
-2025-05-25 14:05 - DEBUG: Activating the card: 7♦
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: Deactivating the card 7♦
-2025-05-25 14:05 - DEBUG: Activating the card: 2♣
-2025-05-25 14:05 - DEBUG: Deactivating the card 2♣
-2025-05-25 14:05 - DEBUG: Activating the card: K♦
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: Deactivating the card K♦
-2025-05-25 14:05 - DEBUG: Activating the card: J♦
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: Deactivating the card J♦
-2025-05-25 14:05 - DEBUG: Activating the card: Q♠
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: False
-2025-05-25 14:05 - DEBUG: True
-2025-05-25 14:05 - DEBUG: ####### it's a black card!
-2025-05-25 14:05 - DEBUG: ### it's a red card!
-2025-05-25 14:05 - DEBUG: Deactivating the card Q♠
-2025-05-25 14:06 - DEBUG: Activating the card: J♣
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: True
-2025-05-25 14:06 - DEBUG: Deactivating the card J♣
-2025-05-25 14:06 - DEBUG: Activating the card: J♦
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: True
-2025-05-25 14:06 - DEBUG: ### it's a red card!
-2025-05-25 14:06 - DEBUG: ####### it's a black card!
-2025-05-25 14:06 - DEBUG: Deactivating the card J♦
-2025-05-25 14:06 - DEBUG: Activating the card: 9♥
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: Deactivating the card 9♥
-2025-05-25 14:06 - DEBUG: Activating the card: 2♥
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: Deactivating the card 2♥
-2025-05-25 14:06 - DEBUG: Activating the card: 10♥
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: True
-2025-05-25 14:06 - DEBUG: ### it's a red card!
-2025-05-25 14:06 - DEBUG: ####### it's a black card!
-2025-05-25 14:06 - DEBUG: Deactivating the card 10♥
-2025-05-25 14:06 - DEBUG: Activating the card: A♠
-2025-05-25 14:06 - DEBUG: Deactivating the card A♠
-2025-05-25 14:06 - DEBUG: Activating the card: 8♦
-2025-05-25 14:06 - DEBUG: True
-2025-05-25 14:06 - DEBUG: ### it's a red card!
-2025-05-25 14:06 - DEBUG: ####### it's a black card!
-2025-05-25 14:06 - DEBUG: Deactivating the card 8♦
-2025-05-25 14:06 - DEBUG: Activating the card: 7♦
-2025-05-25 14:06 - DEBUG: True
-2025-05-25 14:06 - DEBUG: ### it's a red card!
-2025-05-25 14:06 - DEBUG: ### it's a red card!
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: Deactivating the card 7♦
-2025-05-25 14:06 - DEBUG: Activating the card: 7♦
-2025-05-25 14:06 - DEBUG: True
-2025-05-25 14:06 - DEBUG: ### it's a red card!
-2025-05-25 14:06 - DEBUG: ### it's a red card!
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: False
-2025-05-25 14:06 - DEBUG: Deactivating the card 7♦
-2025-05-25 14:07 - DEBUG: Activating the card: 9♣
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: True
-2025-05-25 14:07 - DEBUG: ####### it's a black card!
-2025-05-25 14:07 - DEBUG: ### it's a red card!
-2025-05-25 14:07 - DEBUG: Deactivating the card 9♣
-2025-05-25 14:07 - DEBUG: Activating the card: 9♣
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: Deactivating the card 9♣
-2025-05-25 14:07 - DEBUG: Activating the card: 6♥
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: Deactivating the card 6♥
-2025-05-25 14:07 - DEBUG: Activating the card: 8♣
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: True
-2025-05-25 14:07 - DEBUG: ####### it's a black card!
-2025-05-25 14:07 - DEBUG: ### it's a red card!
-2025-05-25 14:07 - DEBUG: Deactivating the card 8♣
-2025-05-25 14:07 - DEBUG: Activating the card: 7♦
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: True
-2025-05-25 14:07 - DEBUG: ### it's a red card!
-2025-05-25 14:07 - DEBUG: ####### it's a black card!
-2025-05-25 14:07 - DEBUG: Deactivating the card 7♦
-2025-05-25 14:07 - DEBUG: Activating the card: 6♠
-2025-05-25 14:07 - DEBUG: False
-2025-05-25 14:07 - DEBUG: True
-2025-05-25 14:07 - DEBUG: ####### it's a black card!
-2025-05-25 14:07 - DEBUG: ### it's a red card!
-2025-05-25 14:07 - DEBUG: Deactivating the card 6♠
-2025-05-25 14:07 - DEBUG: Activating the card: A♥
-2025-05-25 14:07 - DEBUG: Deactivating the card A♥
-2025-05-25 14:10 - DEBUG: Activating the card: 5♣
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: True
-2025-05-25 14:10 - DEBUG: ####### it's a black card!
-2025-05-25 14:10 - DEBUG: ####### it's a black card!
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: Deactivating the card 5♣
-2025-05-25 14:10 - DEBUG: Activating the card: 4♦
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: False
-2025-05-25 14:10 - DEBUG: True
-2025-05-25 14:10 - DEBUG: ### it's a red card!
-2025-05-25 14:10 - DEBUG: ####### it's a black card!
-2025-05-25 14:10 - DEBUG: Deactivating the card 4♦
-2025-05-25 14:10 - DEBUG: Activating the card: A♦
-2025-05-25 14:10 - DEBUG: Deactivating the card A♦
-2025-05-25 14:10 - DEBUG: Activating the card: 2♠
-2025-05-25 14:11 - DEBUG: False
-2025-05-25 14:11 - DEBUG: False
-2025-05-25 14:11 - DEBUG: False
-2025-05-25 14:11 - DEBUG: False
-2025-05-25 14:11 - DEBUG: False
-2025-05-25 14:11 - DEBUG: False
-2025-05-25 14:11 - DEBUG: False
-2025-05-25 14:11 - DEBUG: Deactivating the card 2♠
-2025-05-25 14:11 - DEBUG: Activating the card: Q♠
-2025-05-25 14:11 - DEBUG: True
-2025-05-25 14:11 - DEBUG: ####### it's a black card!
-2025-05-25 14:11 - DEBUG: ### it's a red card!
-2025-05-25 14:11 - DEBUG: Deactivating the card Q♠
-2025-05-25 14:12 - DEBUG: Activating the card: 5♠
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: True
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: True
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: Deactivating the card 5♠
-2025-05-25 14:12 - DEBUG: Activating the card: Q♣
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: True
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: True
-2025-05-25 14:12 - DEBUG: Deactivating the card Q♣
-2025-05-25 14:12 - DEBUG: Activating the card: A♣
-2025-05-25 14:12 - DEBUG: Deactivating the card A♣
-2025-05-25 14:12 - DEBUG: Activating the card: 10♣
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: Deactivating the card 10♣
-2025-05-25 14:12 - DEBUG: Activating the card: 2♠
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: True
-2025-05-25 14:12 - DEBUG: ####### it's a black card!
-2025-05-25 14:12 - DEBUG: ### it's a red card!
-2025-05-25 14:12 - DEBUG: Deactivating the card 2♠
-2025-05-25 14:12 - DEBUG: Activating the card: K♦
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: Deactivating the card K♦
-2025-05-25 14:12 - DEBUG: Activating the card: K♦
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: Deactivating the card K♦
-2025-05-25 14:12 - DEBUG: Activating the card: K♦
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: False
-2025-05-25 14:12 - DEBUG: Deactivating the card K♦
-2025-05-25 14:14 - DEBUG: Activating the card: 4♦
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: True
-2025-05-25 14:14 - DEBUG: ### it's a red card!
-2025-05-25 14:14 - DEBUG: ####### it's a black card!
-2025-05-25 14:14 - DEBUG: Deactivating the card 4♦
-2025-05-25 14:14 - DEBUG: Activating the card: 3♠
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: True
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: Deactivating the card 3♠
-2025-05-25 14:14 - DEBUG: Activating the card: 3♠
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: True
-2025-05-25 14:14 - DEBUG: ####### it's a black card!
-2025-05-25 14:14 - DEBUG: ### it's a red card!
-2025-05-25 14:14 - DEBUG: Deactivating the card 3♠
-2025-05-25 14:14 - DEBUG: Activating the card: 3♣
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: True
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: Deactivating the card 3♣
-2025-05-25 14:14 - DEBUG: Activating the card: 8♦
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: Deactivating the card 8♦
-2025-05-25 14:14 - DEBUG: Activating the card: 2♠
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: True
-2025-05-25 14:14 - DEBUG: ####### it's a black card!
-2025-05-25 14:14 - DEBUG: ####### it's a black card!
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: False
-2025-05-25 14:14 - DEBUG: Deactivating the card 2♠
-2025-05-25 14:15 - DEBUG: Activating the card: J♦
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: True
-2025-05-25 14:15 - DEBUG: ### it's a red card!
-2025-05-25 14:15 - DEBUG: ####### it's a black card!
-2025-05-25 14:15 - DEBUG: Deactivating the card J♦
-2025-05-25 14:15 - DEBUG: Activating the card: 8♣
-2025-05-25 14:15 - DEBUG: True
-2025-05-25 14:15 - DEBUG: ####### it's a black card!
-2025-05-25 14:15 - DEBUG: ### it's a red card!
-2025-05-25 14:15 - DEBUG: Deactivating the card 8♣
-2025-05-25 14:15 - DEBUG: Activating the card: 7♦
-2025-05-25 14:15 - DEBUG: True
-2025-05-25 14:15 - DEBUG: ### it's a red card!
-2025-05-25 14:15 - DEBUG: ####### it's a black card!
-2025-05-25 14:15 - DEBUG: Deactivating the card 7♦
-2025-05-25 14:15 - DEBUG: Activating the card: Q♥
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: Deactivating the card Q♥
-2025-05-25 14:15 - DEBUG: Activating the card: J♣
-2025-05-25 14:15 - DEBUG: False
-2025-05-25 14:15 - DEBUG: True
-2025-05-25 14:15 - DEBUG: ####### it's a black card!
-2025-05-25 14:15 - DEBUG: ### it's a red card!
-2025-05-25 14:15 - DEBUG: Deactivating the card J♣
-2025-05-25 14:16 - DEBUG: Activating the card: 10♦
-2025-05-25 14:16 - DEBUG: False
-2025-05-25 14:16 - DEBUG: True
-2025-05-25 14:16 - DEBUG: ### it's a red card!
-2025-05-25 14:16 - DEBUG: ####### it's a black card!
-2025-05-25 14:16 - DEBUG: Deactivating the card 10♦
-2025-05-25 14:16 - DEBUG: Activating the card: A♣
-2025-05-25 14:16 - DEBUG: Deactivating the card A♣
-2025-05-25 14:16 - DEBUG: Activating the card: 2♣
-2025-05-25 14:16 - DEBUG: Deactivating the card 2♣
-2025-05-25 14:16 - DEBUG: Activating the card: 9♠
-2025-05-25 14:16 - DEBUG: False
-2025-05-25 14:16 - DEBUG: True
-2025-05-25 14:16 - DEBUG: ####### it's a black card!
-2025-05-25 14:16 - DEBUG: ### it's a red card!
-2025-05-25 14:16 - DEBUG: Deactivating the card 9♠
-2025-05-25 14:16 - DEBUG: Activating the card: 8♥
-2025-05-25 14:16 - DEBUG: False
-2025-05-25 14:16 - DEBUG: True
-2025-05-25 14:16 - DEBUG: ### it's a red card!
-2025-05-25 14:16 - DEBUG: ####### it's a black card!
-2025-05-25 14:16 - DEBUG: Deactivating the card 8♥
-2025-05-25 14:17 - DEBUG: Activating the card: 7♥
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: Deactivating the card 7♥
-2025-05-25 14:17 - DEBUG: Activating the card: 2♠
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: False
-2025-05-25 14:17 - DEBUG: Deactivating the card 2♠
-2025-05-25 14:18 - ERROR: Error drawing card border
+2025-05-26 12:53 - ERROR: list index out of range
 Traceback (most recent call last):
-  File "/home/franek/gigathon2025/gigathon2025-solitaire/card.py", line 89, in draw
-    self.window.addch(self.y, self.x + i, curses.ACS_HLINE)
-                              ~~~~~~~^~~
-TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
-2025-05-25 14:18 - ERROR: An error occurred: unsupported operand type(s) for +: 'NoneType' and 'int'
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card_pile.is_a_stock_pile():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 27, in is_last_card
+    return card == self.card_list[-1]
+                   ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 12:53 - ERROR: list index out of range
 Traceback (most recent call last):
-  File "/home/franek/gigathon2025/gigathon2025-solitaire/main.py", line 45, in <module>
-    curses.wrapper(main)
-    ~~~~~~~~~~~~~~^^^^^^
-  File "/usr/lib/python3.13/curses/__init__.py", line 94, in wrapper
-    return func(stdscr, *args, **kwds)
-  File "/home/franek/gigathon2025/gigathon2025-solitaire/main.py", line 33, in main
-    game.game()
-    ~~~~~~~~~^^
-  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 66, in game
-    desk.init_draw()
-    ~~~~~~~~~~~~~~^^
-  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 75, in init_draw
-    self.stock_pile.draw()
-    ~~~~~~~~~~~~~~~~~~~~^^
-  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 200, in draw
-    card.draw(self.x, self.y, "Stock", False)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/franek/gigathon2025/gigathon2025-solitaire/card.py", line 143, in draw
-    self.window.addstr(self.y + 1, self.x + 1, "~~~~")
-                       ~~~~~~~^~~
-TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
-2025-05-25 14:20 - DEBUG: Activating the card: 8♥
-2025-05-25 14:20 - DEBUG: False
-2025-05-25 14:20 - DEBUG: True
-2025-05-25 14:20 - DEBUG: ### it's a red card!
-2025-05-25 14:20 - DEBUG: ####### it's a black card!
-2025-05-25 14:20 - DEBUG: Deactivating the card 8♥
-2025-05-25 14:21 - DEBUG: Activating the card: A♣
-2025-05-25 14:21 - DEBUG: Deactivating the card A♣
-2025-05-25 14:21 - DEBUG: Activating the card: 5♥
-2025-05-25 14:21 - DEBUG: True
-2025-05-25 14:21 - DEBUG: ### it's a red card!
-2025-05-25 14:21 - DEBUG: ####### it's a black card!
-2025-05-25 14:21 - DEBUG: Deactivating the card 5♥
-2025-05-25 14:22 - DEBUG: Activating the card: A♣
-2025-05-25 14:22 - DEBUG: Deactivating the card A♣
-2025-05-25 14:22 - DEBUG: Activating the card: J♠
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: Deactivating the card J♠
-2025-05-25 14:22 - DEBUG: Activating the card: J♠
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: True
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: Deactivating the card J♠
-2025-05-25 14:22 - DEBUG: Activating the card: 7♠
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: True
-2025-05-25 14:22 - DEBUG: Deactivating the card 7♠
-2025-05-25 14:22 - DEBUG: Activating the card: 7♠
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: False
-2025-05-25 14:22 - DEBUG: True
-2025-05-25 14:22 - DEBUG: ####### it's a black card!
-2025-05-25 14:22 - DEBUG: ### it's a red card!
-2025-05-25 14:22 - DEBUG: Deactivating the card 7♠
-2025-05-25 14:23 - DEBUG: Activating the card: A♣
-2025-05-25 14:23 - DEBUG: Deactivating the card A♣
-2025-05-25 14:23 - DEBUG: Activating the card: 7♠
-2025-05-25 14:23 - DEBUG: False
-2025-05-25 14:23 - DEBUG: False
-2025-05-25 14:23 - DEBUG: False
-2025-05-25 14:23 - DEBUG: True
-2025-05-25 14:23 - DEBUG: ####### it's a black card!
-2025-05-25 14:23 - DEBUG: ### it's a red card!
-2025-05-25 14:23 - DEBUG: Deactivating the card 7♠
-2025-05-25 14:23 - DEBUG: Activating the card: 3♣
-2025-05-25 14:23 - DEBUG: True
-2025-05-25 14:23 - DEBUG: ####### it's a black card!
-2025-05-25 14:23 - DEBUG: ### it's a red card!
-2025-05-25 14:23 - DEBUG: Deactivating the card 3♣
-2025-05-25 14:24 - DEBUG: Activating the card: 8♣
-2025-05-25 14:24 - DEBUG: False
-2025-05-25 14:24 - DEBUG: True
-2025-05-25 14:24 - DEBUG: ####### it's a black card!
-2025-05-25 14:24 - DEBUG: ### it's a red card!
-2025-05-25 14:24 - DEBUG: Deactivating the card 8♣
-2025-05-25 14:24 - DEBUG: Activating the card: A♥
-2025-05-25 14:24 - DEBUG: Deactivating the card A♥
-2025-05-25 14:24 - DEBUG: Activating the card: 7♦
-2025-05-25 14:24 - DEBUG: False
-2025-05-25 14:24 - DEBUG: True
-2025-05-25 14:24 - DEBUG: ### it's a red card!
-2025-05-25 14:24 - DEBUG: ####### it's a black card!
-2025-05-25 14:24 - DEBUG: Deactivating the card 7♦
-2025-05-25 14:25 - DEBUG: Activating the card: 5♣
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: True
-2025-05-25 14:25 - DEBUG: ####### it's a black card!
-2025-05-25 14:25 - DEBUG: ### it's a red card!
-2025-05-25 14:25 - DEBUG: Deactivating the card 5♣
-2025-05-25 14:25 - DEBUG: Activating the card: 2♥
-2025-05-25 14:25 - DEBUG: Deactivating the card 2♥
-2025-05-25 14:25 - DEBUG: Activating the card: A♣
-2025-05-25 14:25 - DEBUG: Deactivating the card A♣
-2025-05-25 14:25 - DEBUG: Activating the card: 9♥
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: True
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: Deactivating the card 9♥
-2025-05-25 14:25 - DEBUG: Activating the card: 9♥
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: True
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: Deactivating the card 9♥
-2025-05-25 14:25 - DEBUG: Activating the card: 8♠
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: Deactivating the card 8♠
-2025-05-25 14:25 - DEBUG: Activating the card: 9♥
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: True
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: Deactivating the card 9♥
-2025-05-25 14:25 - DEBUG: Activating the card: 8♠
-2025-05-25 14:25 - DEBUG: True
-2025-05-25 14:25 - DEBUG: ####### it's a black card!
-2025-05-25 14:25 - DEBUG: ### it's a red card!
-2025-05-25 14:25 - DEBUG: Deactivating the card 8♠
-2025-05-25 14:25 - DEBUG: Activating the card: 8♥
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: Deactivating the card 8♥
-2025-05-25 14:25 - DEBUG: Activating the card: 8♦
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: Deactivating the card 8♦
-2025-05-25 14:25 - DEBUG: Activating the card: 10♠
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: False
-2025-05-25 14:25 - DEBUG: Deactivating the card 10♠
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card_pile.is_a_stock_pile():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 27, in is_last_card
+    return card == self.card_list[-1]
+                   ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 12:53 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card_pile.is_a_stock_pile():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 27, in is_last_card
+    return card == self.card_list[-1]
+                   ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 12:53 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card_pile.is_a_stock_pile():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 27, in is_last_card
+    return card == self.card_list[-1]
+                   ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 12:53 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card_pile.is_a_stock_pile():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 27, in is_last_card
+    return card == self.card_list[-1]
+                   ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 12:53 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card_pile.is_a_stock_pile():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 27, in is_last_card
+    return card == self.card_list[-1]
+                   ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 12:53 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card_pile.is_a_stock_pile():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 27, in is_last_card
+    return card == self.card_list[-1]
+                   ~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 12:57 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 79, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 12:57 - ERROR: 'StockPile' object has no attribute 'return_next_cards'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 140, in try_moving_active_card
+    cards = self.active_card_pile.return_next_cards(self.active_card)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StockPile' object has no attribute 'return_next_cards'
+2025-05-26 12:57 - ERROR: 'StockPile' object has no attribute 'return_next_cards'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 140, in try_moving_active_card
+    cards = self.active_card_pile.return_next_cards(self.active_card)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StockPile' object has no attribute 'return_next_cards'
+2025-05-26 13:21 - ERROR: 'str' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card.return_pile() == 'STOCK':
+                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/card.py", line 208, in return_pile
+    return self.pile.name
+           ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'name'
+2025-05-26 13:21 - ERROR: 'str' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card.return_pile() == 'STOCK':
+                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/card.py", line 208, in return_pile
+    return self.pile.name
+           ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'name'
+2025-05-26 13:21 - ERROR: 'str' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 132, in try_moving_active_card
+    if self.active_card_pile.is_last_card(self.active_card) or self.active_card.return_pile() == 'STOCK':
+                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/card.py", line 208, in return_pile
+    return self.pile.name
+           ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'name'
+2025-05-26 13:23 - ERROR: 'StockPile' object has no attribute 'return_next_cards'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 140, in try_moving_active_card
+    cards = self.active_card_pile.return_next_cards(self.active_card)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StockPile' object has no attribute 'return_next_cards'
+2025-05-26 13:24 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:24 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:25 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:25 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:25 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:25 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 114, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:26 - ERROR: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in enumerate(cards):
+                       ~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-05-26 13:26 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 114, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:31 - ERROR: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in enumerate(cards):
+                       ~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-05-26 13:36 - ERROR: bad operand type for abs(): 'enumerate'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in -abs(enumerate(cards)):
+                        ~~~^^^^^^^^^^^^^^^^^^
+TypeError: bad operand type for abs(): 'enumerate'
+2025-05-26 13:36 - ERROR: bad operand type for abs(): 'enumerate'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in -abs(enumerate(cards)):
+                        ~~~^^^^^^^^^^^^^^^^^^
+TypeError: bad operand type for abs(): 'enumerate'
+2025-05-26 13:36 - ERROR: bad operand type for abs(): 'enumerate'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in -abs(enumerate(cards)):
+                        ~~~^^^^^^^^^^^^^^^^^^
+TypeError: bad operand type for abs(): 'enumerate'
+2025-05-26 13:36 - ERROR: bad operand type for abs(): 'enumerate'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in -abs(enumerate(cards)):
+                        ~~~^^^^^^^^^^^^^^^^^^
+TypeError: bad operand type for abs(): 'enumerate'
+2025-05-26 13:36 - ERROR: bad operand type for abs(): 'enumerate'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in -abs(enumerate(cards)):
+                        ~~~^^^^^^^^^^^^^^^^^^
+TypeError: bad operand type for abs(): 'enumerate'
+2025-05-26 13:37 - ERROR: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in enumerate(cards):
+                       ~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-05-26 13:37 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 114, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:39 - ERROR: 'StockPile' object has no attribute 'return_next_cards'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 140, in try_moving_active_card
+    cards = self.active_card_pile.return_next_cards(self.active_card)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StockPile' object has no attribute 'return_next_cards'
+2025-05-26 13:46 - ERROR: list.remove(x): x not in list
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 145, in try_moving_active_card
+    self.active_card_pile.card_list.remove(card)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+ValueError: list.remove(x): x not in list
+2025-05-26 13:52 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 114, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:52 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 13:52 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 14:01 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 14:03 - ERROR: 'StockPile' object has no attribute 'return_next_cards'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 140, in try_moving_active_card
+    cards = self.active_card_pile.return_next_cards(self.active_card)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StockPile' object has no attribute 'return_next_cards'
+2025-05-26 14:04 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 130, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 14:04 - ERROR: 'StockPile' object has no attribute 'return_next_cards'
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 140, in try_moving_active_card
+    cards = self.active_card_pile.return_next_cards(self.active_card)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StockPile' object has no attribute 'return_next_cards'
+2025-05-26 14:04 - ERROR: list index out of range
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 133, in try_moving_active_card
+    self.active_card_pile.move_to()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/piles.py", line 83, in move_to
+    self.turned_card_list[-1].turn()
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+2025-05-26 14:09 - ERROR: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/game.py", line 96, in game
+    desk.on_click(mouse_x, mouse_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 82, in on_click
+    if self.try_moving_active_card():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franek/gigathon2025/gigathon2025-solitaire/desk.py", line 141, in try_moving_active_card
+    for count, card in enumerate(cards):
+                       ~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not iterable

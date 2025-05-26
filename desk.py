@@ -12,7 +12,6 @@ logger = logging.getLogger()
 class Desk:
     """Class that's drawing the whole Tableau on the window."""
 
-    cards: list[Card] = []
     foundation_piles: list[FoundationPile] = []
     tableau_piles: list[TableauPile] = []
     active_card: Card | None = None
@@ -20,7 +19,7 @@ class Desk:
     def __init__(self, window: curses.window):
         self.window = window
 
-    def initialize(self) -> list[Card]:
+    def initialize(self):
         """Initializing all of the desk's content."""
 
         # Initialize all cards
@@ -52,13 +51,13 @@ class Desk:
         ]
 
         # 1 StockPile instance
-        self.stock_pile = StockPile(self.stock_cards)
+        self.stock_pile = StockPile(self.stock_cards, self.window)
 
     def initialize_tableau(self, cards: list[Card]):
         for i in range(7, 0, -1):
             lasted_cards = cards[:i]
             cards = cards[i:]
-            current_pile = TableauPile(lasted_cards, 28 + 12 * i)
+            current_pile = TableauPile(lasted_cards, 28 + 12 * i, self.window) 
             self.tableau_piles.append(current_pile)
 
     def init_draw(self):
@@ -113,7 +112,7 @@ class Desk:
             if pile.is_clicked(self.mouse_x, self.mouse_y):
                 if pile.can_move(self.active_card):  # Move the card if it's possible
                     self.active_card_pile.move_to()
-                    pile.move_from_other_pile(self.active_card, 0, self.active_card_pile)
+                    pile.move_from_other_pile(0, self.active_card_pile, self.active_card)
                     self.active_card.change_piles(CardPileEnum.FOUNDATIONS)
                     if self.active_card.pile == CardPileEnum.STOCK:
                         self.stock_pile.draw_last_card()
@@ -121,18 +120,42 @@ class Desk:
                     return True
                 
         for pile in self.tableau_piles:  # Checking for click in Tableau piles...
-            if pile.last_card_clicked(
+            if pile.pile_or_card_clicked(
                 self.mouse_x, self.mouse_y
             ):  # ...on the last card
                 if pile.can_move_card(
                     self.active_card
-                ):  # Try to move the active card on the clicked one.
-                    self.active_card_pile.move_to()
-                    pile.move_from_other_pile(self.active_card, pile.last_card_relative_y() + 3, self.active_card_pile)
-                    self.active_card.change_piles(CardPileEnum.TABLEAU)
-                    if self.active_card.pile == CardPileEnum.STOCK:
-                        self.stock_pile.draw_last_card()
-                    self.try_deactivate_active_card()
+                ):  # Try to move the active card(s) on the clicked one.
+                    if self.active_card.is_a_king():
+                        self.active_card_pile.move_to()
+                        pile.move_from_other_pile(0, CardPileEnum.TABLEAU, self.active_card)
+                    if self.active_card_pile.is_last_card(self.active_card) or self.active_card.return_pile() == 'STOCK':
+                        self.active_card_pile.move_to()
+                        pile.move_from_other_pile(pile.last_card_relative_y() + 3, CardPileEnum.TABLEAU, self.active_card)
+                        self.active_card.change_piles(CardPileEnum.TABLEAU)
+                        if self.active_card.pile == CardPileEnum.STOCK:
+                            self.stock_pile.draw_last_card()
+                        self.try_deactivate_active_card()
+                    else:
+                        cards = self.active_card_pile.return_next_cards(self.active_card)
+                        for count, card in enumerate(cards):    
+                            count = len(cards) - (count + 1)
+                            if count == 0:  # First card (the one that was clicked)
+                                self.active_card_pile.move_to()
+                            else:
+                                self.active_card_pile.card_list.remove(card)
+                                card.undraw()
+                            
+                            pile.move_from_other_pile(pile.last_card_relative_y() + 3, CardPileEnum.TABLEAU, card)
+                        
+                        # Turn the next card in the source pile after all cards are moved
+                        if self.active_card_pile.card_list and not self.active_card_pile.card_list[-1].turned:
+                            self.active_card_pile.card_list[-1].turn()
+                            self.active_card_pile.card_list[-1].redraw()
+                            
+                        self.try_deactivate_active_card()
+                    if pile.is_empty():         # drawing the empty pile if it's empty.
+                        pile.draw_empty()
                     return True
         return False
         # self.window.refresh()  # Refresh to show the active card
@@ -146,4 +169,4 @@ class Desk:
 
     def check_stockpile(self):
         if self.stock_pile.is_clicked(self.mouse_x, self.mouse_y):
-            self.stock_pile.check_card(self.window)
+            self.stock_pile.check_card()
