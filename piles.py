@@ -6,6 +6,7 @@ from card import Card, CardColorEnum, CardPileEnum
 
 logger = logging.getLogger()
 
+
 class Pile:
     """
     Parent pile class.
@@ -30,14 +31,14 @@ class Pile:
         self.window: curses.window = None
 
     def is_empty(self) -> bool:
-        """ Checking if the pile is empty."""
+        """Checking if the pile is empty."""
         if self.card_list:
             return False
         else:
             return True
 
     def is_last_card(self, card: Card):
-        """ Checking if the card is the last card from the pile.
+        """Checking if the card is the last card from the pile.
 
         :param card: The card to check
         """
@@ -45,17 +46,17 @@ class Pile:
             return card == self.card_list[-1]
         except IndexError:
             return False
-        
+
     def is_clicked(self, x: int, y: int) -> bool:
         """Checking for a click in the pile.
-        
+
         :param x: The x coor of click
         :param y: The y coor of click
-        
+
         """
-        return (self.x <= x < (self.x + self.width)) and ( 
+        return (self.x <= x < (self.x + self.width)) and (
             self.y <= y < (self.y + self.height)
-            )
+        )
 
     def draw_empty(self):
         """Drawing the empty pile (without cards)"""
@@ -69,7 +70,9 @@ class Pile:
             self.window.addch(self.y, self.x, curses.ACS_ULCORNER)
             self.window.addch(self.y, self.x + self.width, curses.ACS_URCORNER)
             self.window.addch(self.y + self.height, self.x, curses.ACS_LLCORNER)
-            self.window.addch(self.y + self.height, self.x + self.width, curses.ACS_LRCORNER)
+            self.window.addch(
+                self.y + self.height, self.x + self.width, curses.ACS_LRCORNER
+            )
 
     def is_a_stock_pile(self) -> bool:
         """Checking if this pile is a StockPile."""
@@ -80,14 +83,13 @@ class Pile:
             return False
         except NotImplementedError:
             return True
-            
-        
+
     def is_in_card_list(self, card):
         return card in self.card_list
 
     def pile_or_card_clicked(self, x, y):
         """Check if last card in a pile is clicked (or, if it's not found, check the pile itself).
-         
+
         :param x: The x coor of click
         :param y: The y coor of click
         """
@@ -95,7 +97,7 @@ class Pile:
             return self.card_list[-1].is_clicked(x, y)
         except IndexError:
             return self.is_clicked(x, y)
-        
+
     # Interface methods: If not implemented in the inherited class,
     # it would raise the error.
     def can_move_to(self):
@@ -108,11 +110,11 @@ class Pile:
     def move_to(self, count: int = -1):
         """Method to **TAKE THE CARD(S) OFF**
         Caution: many cards can be taken off.
-        
+
         :param count: How many cards will get removed
         """
 
-        if self.can_move_to(): 
+        if self.can_move_to():
             if self.turned_card_list:
                 next_card = self.turned_card_list[-1]
                 self.turned_card_list.remove(next_card)
@@ -131,21 +133,24 @@ class Pile:
                         self.card_list.remove(next_card)
                         self.card_list[-1 + count].turn()
                     except Exception:
-                        logger.error("Transfer of multiple cards went wrong.", exc_info = True)
+                        logger.error(
+                            "Transfer of multiple cards went wrong.", exc_info=True
+                        )
 
     def move_from_other_pile(self, card: Card | None):
         """Method to **PUT THE CARD ON THIS PILE**
         Caution: Only one card can be put at once.
 
         :param addy: The space to add to the original pile y.
-        :param pile_enum: Card has to know, in which pile it is. 
+        :param pile_enum: Card has to know, in which pile it is.
         :param card: The card to move to this pile.
         """
         if self.can_move_from():
             self.card_list.append(card)
 
+
 class FoundationPile(Pile):
-    """Foundation pile class    
+    """Foundation pile class
 
     Attributes:
         self.color: The color (symbol) of the pile
@@ -170,8 +175,7 @@ class FoundationPile(Pile):
         elif self.color == CardColorEnum.CLUBS:
             self.x -= 10
         # else:     # spades will have the default x.
-            # pass 
-
+        # pass
 
     def draw(self):
         """Draws the Foundation piles."""
@@ -203,10 +207,9 @@ class FoundationPile(Pile):
         else:
             self.card_list[-1].draw(self.x, self.y, CardPileEnum.FOUNDATIONS, True)
 
-
     def can_move(self, card: Card) -> bool:
         """Moves (if it's possible) a card to the Foundation pile.
-        
+
         :param card: The card to check if it can move into the pile the method is called on.
         """
         if self.color == card.color:
@@ -221,7 +224,7 @@ class FoundationPile(Pile):
                 except IndexError:
                     pass
         return False
-    
+
     # Method override
     def can_move_from(self):
         return True
@@ -256,7 +259,9 @@ class TableauPile(Pile):
 
     def draw(self):
         for i, card in enumerate(self.card_list):
-            card.draw(self.x, self.y + i * 3, CardPileEnum.TABLEAU, card.get_turned_status())
+            card.draw(
+                self.x, self.y + i * 3, CardPileEnum.TABLEAU, card.get_turned_status()
+            )
 
     def return_next_cards(self, card: Card) -> list[Card]:
         if card in self.card_list:
@@ -271,7 +276,7 @@ class TableauPile(Pile):
             ):
                 return True
         except IndexError:
-            if card.num.value == 13: # King
+            if card.num.value == 13:  # King
                 return True
         return False
 
@@ -282,8 +287,8 @@ class TableauPile(Pile):
                 return card
 
     def last_card_relative_y(self):
-        return (self.card_list[-1].y - 9)
-    
+        return self.card_list[-1].y - 9
+
     def reactivate_last_card(self):
         """Used for debug"""
         try:
@@ -292,6 +297,7 @@ class TableauPile(Pile):
             card.deactivate()
         except IndexError:
             pass
+
     # Method override
     def can_move_to(self) -> bool:
         return True
@@ -302,7 +308,7 @@ class TableauPile(Pile):
 
 class StockPile(Pile):
     """Pile in which you have the rest of the cards
-    
+
     Attributes:
         self.turned_card_list: basically the waste pile card_list
         self.card_list: list of cards inside the pile
@@ -331,21 +337,29 @@ class StockPile(Pile):
             self.card_list[-1].draw(self.x, self.y, CardPileEnum.STOCK, False)
         else:
             self.draw_empty()
-            
+
         if self.turned_card_list:
-            self.turned_card_list[-1].draw(self.x + 10, self.y, CardPileEnum.STOCK, True)
+            self.turned_card_list[-1].draw(
+                self.x + 10, self.y, CardPileEnum.STOCK, True
+            )
         else:
             # Draw empty turned pile
             for i in range(self.width):
                 self.window.addch(self.y, self.x + 10 + i, curses.ACS_HLINE)
-                self.window.addch(self.y + self.height, self.x + 10 + i, curses.ACS_HLINE)
+                self.window.addch(
+                    self.y + self.height, self.x + 10 + i, curses.ACS_HLINE
+                )
             for i in range(self.height):
                 self.window.addch(self.y + i, self.x + 10, curses.ACS_VLINE)
-                self.window.addch(self.y + i, self.x + 10 + self.width, curses.ACS_VLINE)
+                self.window.addch(
+                    self.y + i, self.x + 10 + self.width, curses.ACS_VLINE
+                )
             self.window.addch(self.y, self.x + 10, curses.ACS_ULCORNER)
             self.window.addch(self.y, self.x + 10 + self.width, curses.ACS_URCORNER)
             self.window.addch(self.y + self.height, self.x + 10, curses.ACS_LLCORNER)
-            self.window.addch(self.y + self.height, self.x + 10 + self.width, curses.ACS_LRCORNER)
+            self.window.addch(
+                self.y + self.height, self.x + 10 + self.width, curses.ACS_LRCORNER
+            )
 
     def check_card(self):
         """

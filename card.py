@@ -45,11 +45,11 @@ class CardNumberEnum(Enum):
 class Card:
     """
     Objects of this class will represent cards on the table.
-    
+
     Attributes:
         self.color: Color (or symbol) of the card
         self.num: Number of the card
-        self.window: 
+        self.window:
         self.width: Width of the card (8)
         self.height: Width of the card (6 (or 3 if unturned in Tableau))
         self.turned: Variable storing the info about the turned status (True or False)
@@ -218,7 +218,7 @@ class Card:
         self.draw(self.x, self.y, self.pile, self.turned)
 
     def return_pile(self):
-        return self.pile.name 
+        return self.pile.name
 
     def activate(self):
         """Makes the card active and marking it red"""
@@ -260,7 +260,7 @@ class Card:
 
     def is_clicked(self, x, y) -> bool:
         """Checking if the card is clicked
-        
+
         :param x: The x coor of click
         :param y: The y coor of click
         """
@@ -279,8 +279,8 @@ class Card:
             return "red"
 
     def change_piles(self, new_pile):
-        """Changing the pile 
-        
+        """Changing the pile
+
         :param new_pile: New pile to replace the old one with.
         """
         self.pile = new_pile

@@ -9,7 +9,6 @@ from buttons import Button
 logger = logging.getLogger()
 
 
-
 def start_game(window: curses.window):
     """Loading screen and stuff"""
     # Setup
@@ -46,6 +45,7 @@ def start_game(window: curses.window):
         time.sleep(0.1)  # Prevent CPU hogging
 
         window.refresh()
+
 
 def game(window: curses.window):
     """Main game function (event loop)"""

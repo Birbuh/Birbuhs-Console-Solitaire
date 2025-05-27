@@ -2,7 +2,10 @@
 
 BCS is a light-weight solitaire written fully in python (ncurses library).
 
-* Caution: it works ONLY for Linux by now.
+To play, just clone the repo or download the zip.
+Then go to the folder it's in and launch `python main.py`. 
+
+The one and only requirement is Python interpreter and Linux OS. It doesn't work for Windows rn, sorry.
 
 # HOW TO PLAY:
 (this tutorial is fully copied from https://bicyclecards.com/how-to-play/solitaire)

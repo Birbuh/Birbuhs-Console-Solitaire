@@ -20,6 +20,7 @@ logging.basicConfig(
 
 logger = logging.getLogger()
 
+
 def main(window: curses.window):
     """Function running the program."""
     # Setup
@@ -38,11 +39,13 @@ def main(window: curses.window):
     window.getch()
 
 
-if __name__ == "__main__": # The program's called here
+if __name__ == "__main__":  # The program's called here
     try:
         curses.wrapper(main)
     except KeyboardInterrupt:
-        sys.exit(0) # exit if ctrl + c
+        sys.exit(0)  # exit if ctrl + c
     except Exception as e:
         logger.error(f"An error occurred: {e}", exc_info=True)
-        sys.exit(1) # exit if an error occurs in the part in which catching exceptions aren't implemented.
+        sys.exit(
+            1
+        )  # exit if an error occurs in the part in which catching exceptions aren't implemented.
