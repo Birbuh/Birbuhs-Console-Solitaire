@@ -19,8 +19,8 @@ class Desk:
         self.stock_pile: Stock pile object
         self.active_card: Card object that is active (not more than one)
         self.window: The window in which everything is drawn.
-        self.mouse_x: mouse x coor on click
-        self.mouse_y: mouse y coor on click
+        self.mouse_x: mouse x coord on click
+        self.mouse_y: mouse y coord on click
 
     """
 
@@ -35,19 +35,22 @@ class Desk:
         """Initializing all of the desk's content."""
 
         # Initialize all cards
-        cards = [
+        self.cards = [
             Card(color, num, self.window)
             for color, num in itertools.product(CardColorEnum, CardNumberEnum)
         ]
-        random.shuffle(cards)  # Shuffling the cards
+        random.shuffle(self.cards)  # Shuffling the cards
 
         # Making these cards group for Tableau and Stock piles.
-        tableau_cards = cards[:28]
-        stock_cards = cards[28:]
+        self.tableau_cards = self.cards[:28]
+        self.stock_cards = self.cards[28:]
+        logger.debug(
+            f"Cards in Tableau: {len(self.tableau_cards)}, Cards in StockPile: {len(self.stock_cards)}"
+        )
 
         # Initialize all classes
         # 7 TableauPile instances
-        self.initialize_tableau(tableau_cards)
+        self.initialize_tableau(self.tableau_cards)
 
         # 4 FoundationPile instances
         self.foundation_hearts = FoundationPile(self.window, CardColorEnum.HEARTS)
@@ -63,7 +66,7 @@ class Desk:
         ]
 
         # 1 StockPile instance
-        self.stock_pile = StockPile(stock_cards, self.window)
+        self.stock_pile = StockPile(self.stock_cards, self.window)
 
     def initialize_tableau(self, cards: list[Card]):
         """Initializing Tableau
@@ -72,6 +75,7 @@ class Desk:
         """
         for i in range(7, 0, -1):
             lasted_cards = cards[:i]
+            logger.debug("tableau_cards changed")
             cards = cards[i:]
             current_pile = TableauPile(lasted_cards, 28 + 12 * i, self.window)
             self.tableau_piles.append(current_pile)
@@ -101,10 +105,21 @@ class Desk:
     def on_click(self, mouse_x, mouse_y) -> bool:
         """Contains (and does) all of the things that are needed on click.
 
-        :param mouse_x: The new x coor of the mouse
-        :param mouse_y: The new y coor of the mouse
+        :param mouse_x: The new x coord of the mouse
+        :param mouse_y: The new y coord of the mouse
         """
-
+        if (
+            len(self.stock_cards)
+            + len(self.tableau_cards)
+            + len(self.stock_pile.turned_card_list)
+            < 52
+        ):
+            logger.error(
+                f"""Hm, I think some card went missing...
+                   stock cards: {len(self.stock_cards)}; 
+                   stock turned cards: {len(self.stock_pile.turned_card_list)} 
+                   tableau cards: {len(self.tableau_cards)};"""
+            )
         # Changing mouse position
         self.mouse_x = mouse_x
         self.mouse_y = mouse_y
@@ -139,13 +154,14 @@ class Desk:
             return False
 
         for pile in self.foundation_piles:  # Checking for click in foundation piles
-            if pile.is_clicked(self.mouse_x, self.mouse_y):
-                if pile.can_move(self.active_card):  # Move the card if it's possible
-                    self.active_card_pile.move_to()
-                    pile.move_from_other_pile(self.active_card)
-                    self.active_card.change_piles(CardPileEnum.FOUNDATIONS)
-                    self.try_deactivate_active_card()
-                    return True
+            if (self.active_card_pile.is_last_card(self.active_card) and self.active_card.return_pile() == 'TABLEAU') or self.active_card.return_pile() == 'STOCK':
+                if pile.is_clicked(self.mouse_x, self.mouse_y):
+                    if pile.can_move(self.active_card):  # Move the card if it's possible
+                        self.active_card_pile.move_to()
+                        pile.move_from_other_pile(self.active_card)
+                        self.active_card.change_piles(CardPileEnum.FOUNDATIONS)
+                        self.try_deactivate_active_card()
+                        return True
 
         for pile in self.tableau_piles:  # Checking for click in Tableau piles...
             if pile.pile_or_card_clicked(
@@ -192,3 +208,9 @@ class Desk:
         if self.stock_pile.is_clicked(self.mouse_x, self.mouse_y):
             return self.stock_pile.check_card()
         return False
+
+    def is_game_won(self):
+        return (
+            all(pile.is_empty() for pile in self.tableau_piles)
+            and self.stock_pile.is_empty()
+        )

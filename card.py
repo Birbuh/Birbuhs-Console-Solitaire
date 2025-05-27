@@ -56,8 +56,8 @@ class Card:
         self.is_active: Variable storing the info about the active status (True or False)
         self.pile: Variable storing the info about in which pile the card is
         self.is_drawn: ???
-        self.x: x coor of the card
-        self.y: y coor of the card
+        self.x: x coord of the card
+        self.y: y coord of the card
     """
 
     def __init__(self, color, num, window: curses.window):
@@ -68,11 +68,17 @@ class Card:
         self.height: int = 6
         self.turned: bool = False
         self.is_active: bool = False
-        curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_RED)
+        curses.init_pair(1, curses.COLOR_RED, curses.COLOR_BLACK)
+        curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_MAGENTA)
+        curses.init_pair(3, curses.COLOR_WHITE, curses.COLOR_MAGENTA)
+        curses.init_pair(4, curses.COLOR_RED, curses.COLOR_MAGENTA)
         self.pile: CardPileEnum | None = None
         self.drawn: bool = False
         self.x = None
         self.y = None
+
+    def __del__(self):
+        logger.info(f"Usunięto object {self}")
 
     def draw(
         self,
@@ -141,16 +147,44 @@ class Card:
         # Draw card content
         if self.turned:
             card_symbol = self.get_symbol()
-            try:
-                self.window.addstr(self.y + 1, self.x + 1, card_symbol)
-            except curses.error:
-                pass
-            try:
-                self.window.addstr(
-                    self.y + self.height - 1, self.x + self.width - 2, card_symbol
-                )
-            except curses.error:
-                pass
+            if self.color_check() == "black":
+                if not self.is_active:
+                    self.window.addstr(self.y + 1, self.x + 1, card_symbol)
+                    self.window.addstr(
+                        self.y + self.height - 1, self.x + self.width - 2, card_symbol
+                    )
+                else:
+                    self.window.addstr(
+                        self.y + 1, self.x + 1, card_symbol, curses.color_pair(3)
+                    )
+                    self.window.addstr(
+                        self.y + self.height - 1,
+                        self.x + self.width - 2, # - self.move_num,
+                        card_symbol,
+                        curses.color_pair(3),
+                    )
+            else:
+                if not self.is_active:
+                    self.window.addstr(
+                        self.y + 1, self.x + 1, card_symbol, curses.color_pair(1)
+                    )
+                    self.window.addstr(
+                        self.y + self.height - 1,
+                        self.x + self.width - 2, # - self.move_num,
+                        card_symbol,
+                        curses.color_pair(1),
+                    )
+                else:
+                    self.window.addstr(
+                        self.y + 1, self.x + 1, card_symbol, curses.color_pair(4)
+                    )
+                    self.window.addstr(
+                        self.y + self.height - 1,
+                        self.x + self.width - 2,
+                        card_symbol,
+                        curses.color_pair(4),
+                    )
+
         else:
             try:
                 self.window.addstr(self.y + 1, self.x + 1, "~~~~")
@@ -187,8 +221,12 @@ class Card:
             num_symbol = "Q"
         elif self.num == CardNumberEnum.KING:
             num_symbol = "K"
+        elif self.num == CardNumberEnum.CARD_NUM_10:
+            num_symbol = "10"
+            # self.move_num = 1
         else:
             num_symbol = str(self.num.value)
+
 
         # Card suit representation
         if self.color == CardColorEnum.HEARTS:
@@ -225,12 +263,13 @@ class Card:
         try:
             self.is_active = True
             # Fill the card with colored background - safely
-            for y in range(self.y + 2, self.y + self.height - 1):
-                for x in range(self.x + 2, self.x + self.width - 1):
+            for y in range(self.y + 1, self.y + self.height):
+                for x in range(self.x + 1, self.x + self.width):
                     try:
                         self.window.addch(y, x, " ", curses.color_pair(2))
                     except curses.error:
                         pass
+            self.draw(self.x, self.y, self.pile, self.turned)
 
             self.window.refresh()
         except Exception as e:
@@ -261,8 +300,8 @@ class Card:
     def is_clicked(self, x, y) -> bool:
         """Checking if the card is clicked
 
-        :param x: The x coor of click
-        :param y: The y coor of click
+        :param x: The x coord of click
+        :param y: The y coord of click
         """
         try:
             return (self.x <= x < (self.x + self.width)) and (

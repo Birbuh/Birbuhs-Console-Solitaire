@@ -7,6 +7,9 @@ Then go to the folder it's in and launch `python main.py`.
 
 The one and only requirement is Python interpreter and Linux OS. It doesn't work for Windows rn, sorry.
 
+
+* CAUTION: If You click too fast, the screen might flash. Sorry about this problem, but I don't know how to fix it. If you know, please message me.
+
 # HOW TO PLAY:
 (this tutorial is fully copied from https://bicyclecards.com/how-to-play/solitaire)
 
@@ -54,13 +57,11 @@ Continue to transfer cards in the tableau and bring cards into play from the sto
 # FAQ:
 
 1. When the card is activated?
- - The card is activated when it has red internals.
+ - The card is activated when it has kind of light purple internals.
 
 2. Why I can't put my Ace to one of the Foundations Piles?
  - Make sure that You were putting it to the right one - it has to match the symbols! If the problem continues, follow step 4.
 
-3. What to do when the card isn't fully drawn?
- - That is an issue I had while developing the program; there's one simple solution to that problem: activate and deactivate the card. That should update the card and draw it once again.
 
 4. What if my problem isn't covered here?
  - Message me on Discord (username: birbuh; id: 1058415231820382278) or just report in on GitHub (https://github.com/Birbuh/Birbuhs-Console-Solitaire/issues). 

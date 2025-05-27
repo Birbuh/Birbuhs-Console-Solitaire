@@ -13,8 +13,8 @@ class Pile:
 
     Attributes:
         self.card_list: list of cards inside the pile
-        self.x: x coor of the pile
-        self.y: y coor of the pile
+        self.x: x coord of the pile
+        self.y: y coord of the pile
         self.width: width of the pile (same as the card's, 8)
         self.height: height of the pile (same as the **turned** card's, 6)
         self.window: The window in which everything is drawn.
@@ -50,8 +50,8 @@ class Pile:
     def is_clicked(self, x: int, y: int) -> bool:
         """Checking for a click in the pile.
 
-        :param x: The x coor of click
-        :param y: The y coor of click
+        :param x: The x coord of click
+        :param y: The y coord of click
 
         """
         return (self.x <= x < (self.x + self.width)) and (
@@ -90,8 +90,8 @@ class Pile:
     def pile_or_card_clicked(self, x, y):
         """Check if last card in a pile is clicked (or, if it's not found, check the pile itself).
 
-        :param x: The x coor of click
-        :param y: The y coor of click
+        :param x: The x coord of click
+        :param y: The y coord of click
         """
         try:
             return self.card_list[-1].is_clicked(x, y)
@@ -118,7 +118,10 @@ class Pile:
             if self.turned_card_list:
                 next_card = self.turned_card_list[-1]
                 self.turned_card_list.remove(next_card)
-                self.turned_card_list[-1].turn()
+                try:
+                    self.turned_card_list[-1].turn()
+                except IndexError:
+                    pass
             else:
                 if count == -1:
                     try:
@@ -155,8 +158,8 @@ class FoundationPile(Pile):
     Attributes:
         self.color: The color (symbol) of the pile
         self.card_list: list of cards inside the pile
-        self.x: x coor of the pile
-        self.y: y coor of the pile
+        self.x: x coord of the pile
+        self.y: y coord of the pile
         self.width: width of the pile (same as the card's, 8)
         self.height: height of the pile (same as the **turned** card's, 6)
         self.window: The window in which everything is drawn.
@@ -236,8 +239,8 @@ class TableauPile(Pile):
 
     Attributes:
         self.card_list: list of cards inside the pile
-        self.x: x coor of the pile
-        self.y: y coor of the pile
+        self.x: x coord of the pile
+        self.y: y coord of the pile
         self.width: width of the pile (same as the card's, 8)
         self.height: height of the pile (same as the **turned** card's, 6)
         self.window: The window in which everything is drawn.
@@ -260,8 +263,11 @@ class TableauPile(Pile):
     def draw(self):
         for i, card in enumerate(self.card_list):
             card.draw(
-                self.x, self.y + i * 3, CardPileEnum.TABLEAU, card.get_turned_status()
+                self.x, self.y + i * 2, CardPileEnum.TABLEAU, card.get_turned_status()
             )
+        for card in self.card_list:
+            if card.turned:
+                card.redraw()
 
     def return_next_cards(self, card: Card) -> list[Card]:
         if card in self.card_list:
@@ -312,8 +318,8 @@ class StockPile(Pile):
     Attributes:
         self.turned_card_list: basically the waste pile card_list
         self.card_list: list of cards inside the pile
-        self.x: x coor of the pile
-        self.y: y coor of the pile
+        self.x: x coord of the pile
+        self.y: y coord of the pile
         self.width: width of the pile (same as the card's, 8)
         self.height: height of the pile (same as the **turned** card's, 6)
         self.window: The window in which everything is drawn.
@@ -330,6 +336,18 @@ class StockPile(Pile):
     def init_draw(self):
         for card in self.card_list:
             card.draw(self.x, self.y, CardPileEnum.STOCK, False)
+        for i in range(self.width):
+            self.window.addch(self.y, self.x + 10 + i, curses.ACS_HLINE)
+            self.window.addch(self.y + self.height, self.x + 10 + i, curses.ACS_HLINE)
+        for i in range(self.height):
+            self.window.addch(self.y + i, self.x + 10, curses.ACS_VLINE)
+            self.window.addch(self.y + i, self.x + 10 + self.width, curses.ACS_VLINE)
+        self.window.addch(self.y, self.x + 10, curses.ACS_ULCORNER)
+        self.window.addch(self.y, self.x + 10 + self.width, curses.ACS_URCORNER)
+        self.window.addch(self.y + self.height, self.x + 10, curses.ACS_LLCORNER)
+        self.window.addch(
+            self.y + self.height, self.x + 10 + self.width, curses.ACS_LRCORNER
+        )
 
     def draw(self):
         """Drawing the stockpile."""
@@ -368,16 +386,18 @@ class StockPile(Pile):
         """
         if self.card_list:  # Turn over the top card
             card = self.card_list[-1]
+            logger.debug("stock_cart modified in chceck_card (remove)")
             self.card_list.remove(card)
             self.turned_card_list.append(card)
             card.turn()
             return True
         else:  # Reset the pile - move all turned cards back to stock pile
             if self.turned_card_list:
-                cards_to_move = list(self.turned_card_list)
+                cards_to_move = list(reversed(self.turned_card_list))
                 self.turned_card_list = []
                 for card in cards_to_move:
                     card.turn()  # Turn the card back down
+                    logger.debug("stock_cart modified in chceck_card (append)")
                     self.card_list.append(card)
                 return True
         return False

@@ -9,8 +9,8 @@ class Button:
     """
     Represents a clickable instance (button)
 
-    x = initial x coordinate of a button;
-    y = initial y coordinate of a button;
+    x = initial x coorddinate of a button;
+    y = initial y coorddinate of a button;
     width = witdth of a button;
     height = height of a button;
     window = window in which the button will appear

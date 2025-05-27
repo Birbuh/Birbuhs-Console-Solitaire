@@ -54,7 +54,7 @@ def game(window: curses.window):
     window.nodelay(True)
     curses.start_color()
     # Create and draw restart button
-    restart_button = Button(10, 10, "Restart the game", window)
+    restart_button = Button(10, 20, "restart the game", window)
     restart_button.draw()
 
     desk = Desk(window)
@@ -62,8 +62,8 @@ def game(window: curses.window):
     desk.init_draw()
 
     # Game instructions
-    window.addstr(2, 7, "Solitaire Game")
-    window.addstr(3, 7, "(double) Press 'q' to quit")
+    window.addstr(11, 7, "Solitaire Game")
+    window.addstr(12, 7, "(double) Press 'q' to quit")
 
     # Start time.time()
     start_time = time.time()
@@ -74,7 +74,7 @@ def game(window: curses.window):
         # Show time
         elapsed_mins = (time.time() - start_time) / 60
         window.addstr(
-            4,
+            13,
             7,
             f"your time: {int(elapsed_mins)} minutes {int((elapsed_mins % 1) * 60)} seconds",
         )
@@ -86,16 +86,39 @@ def game(window: curses.window):
                 try:
                     _, mouse_x, mouse_y, _, _ = curses.getmouse()  # get mouse pos
                     if restart_button.is_clicked(mouse_x, mouse_y):
-                        # Restart the game
+                        # Restart the game through the loading screen (important)
                         return game(window)
                     if desk.on_click(mouse_x, mouse_y):
-                        window.clear()
+                        window.erase()
                         desk.draw()
                         restart_button.draw()
-
                 except Exception as e:
                     logger.error(e, exc_info=True)
         except Exception as e:
             logger.error(e, exc_info=True)
+        if desk.is_game_won():
+            return game_won(window)
         window.refresh()
         time.sleep(0.05)  # Prevent CPU hogging
+
+
+def game_won(window: curses.window):
+    window.clear()
+    window.addstr("Congrats! You've won!")
+
+    play_again_button = Button(10, 10, "Play again?", window)
+    quit_button = Button(30, 10, "Quit :c", window)
+
+    play_again_button.draw()
+    quit_button.draw()
+
+    running = True
+
+    while running:
+        key = window.getch()
+        if key == curses.KEY_MOUSE:
+            _, mouse_x, mouse_y, _, _ = curses.getmouse()  # get mouse pos
+            if play_again_button.is_clicked(mouse_x, mouse_y):
+                return game(window)
+            elif quit_button.is_clicked(mouse_x, mouse_y):
+                running = False
