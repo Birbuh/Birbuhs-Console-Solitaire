@@ -2,7 +2,7 @@ import curses
 import sys
 import logging
 
-from game import Game
+from game import start_game
 
 
 ##################################################################
@@ -26,11 +26,9 @@ def main(window: curses.window):
     curses.mousemask(curses.ALL_MOUSE_EVENTS)
     curses.curs_set(0)  # Hide cursor
     window.clear()
-    game = Game(window)
 
     # Start the game flow
-    game.start_game()
-    game.game()
+    start_game(window)
 
     # Clean exit
     window.clear()
@@ -40,11 +38,11 @@ def main(window: curses.window):
     window.getch()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # The program's called here
     try:
         curses.wrapper(main)
     except KeyboardInterrupt:
-        sys.exit(0)
+        sys.exit(0) # exit if ctrl + c
     except Exception as e:
         logger.error(f"An error occurred: {e}", exc_info=True)
-        sys.exit(1)
+        sys.exit(1) # exit if an error occurs in the part in which catching exceptions aren't implemented.

@@ -45,6 +45,19 @@ class CardNumberEnum(Enum):
 class Card:
     """
     Objects of this class will represent cards on the table.
+    
+    Attributes:
+        self.color: Color (or symbol) of the card
+        self.num: Number of the card
+        self.window: 
+        self.width: Width of the card (8)
+        self.height: Width of the card (6 (or 3 if unturned in Tableau))
+        self.turned: Variable storing the info about the turned status (True or False)
+        self.is_active: Variable storing the info about the active status (True or False)
+        self.pile: Variable storing the info about in which pile the card is
+        self.is_drawn: ???
+        self.x: x coor of the card
+        self.y: y coor of the card
     """
 
     def __init__(self, color, num, window: curses.window):
@@ -246,7 +259,11 @@ class Card:
             logger.error(e, exc_info=True)
 
     def is_clicked(self, x, y) -> bool:
-        """Checking if the card is clicked"""
+        """Checking if the card is clicked
+        
+        :param x: The x coor of click
+        :param y: The y coor of click
+        """
         try:
             return (self.x <= x < (self.x + self.width)) and (
                 self.y <= y < (self.y + self.height)
@@ -255,13 +272,21 @@ class Card:
             logger.error(str(self), exc_info=True)
 
     def color_check(self) -> str:
+        """Checking and returning the **COLOR** of the card (not the symbol)"""
         if self.color.value % 2 == 1:
             return "black"
         else:
             return "red"
 
     def change_piles(self, new_pile):
+        """Changing the pile 
+        
+        :param new_pile: New pile to replace the old one with.
+        """
         self.pile = new_pile
+
+    def get_turned_status(self):
+        return self.turned
 
     def __str__(self):
         return f"Card: {self.color}, {self.num}"

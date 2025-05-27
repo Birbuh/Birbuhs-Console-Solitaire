@@ -1,0 +1,6 @@
+poc
+.aider*
+todo.txt
+.ruff_cache*
+solitare.log
+__pycache__/
