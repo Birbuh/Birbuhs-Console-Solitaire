@@ -24,12 +24,11 @@ class Desk:
 
     """
 
-    foundation_piles: list[FoundationPile] = []
-    tableau_piles: list[TableauPile] = []
-    active_card: Card | None = None
-
     def __init__(self, window: curses.window):
         self.window = window
+        self.foundation_piles = []
+        self.tableau_piles = []
+        self.active_card = []
 
     def initialize(self):
         """Initializing all of the desk's content."""
@@ -102,7 +101,7 @@ class Desk:
 
         self.stock_pile.draw()
 
-    def on_click(self, mouse_x, mouse_y) -> bool:
+    def on_click(self, mouse_x, mouse_y, event) -> bool:
         """Contains (and does) all of the things that are needed on click.
 
         :param mouse_x: The new x coord of the mouse
@@ -129,7 +128,7 @@ class Desk:
             return False
         if self.try_activate_some_card():
             return False
-        return self.check_stockpile()
+        return self.check_stockpile(event)
 
     def try_activate_some_card(self) -> bool:
         """Tries activating a card and returning bool (True is activated, False if not)."""
@@ -204,9 +203,12 @@ class Desk:
             return True
         return False
 
-    def check_stockpile(self):
+    def check_stockpile(self, event):
         if self.stock_pile.is_clicked(self.mouse_x, self.mouse_y):
-            return self.stock_pile.check_card()
+            if (event & curses.BUTTON1_CLICKED != 0) or (event & curses.BUTTON1_PRESSED) != 0:
+                return self.stock_pile.check_card()
+            elif (event & curses.BUTTON3_CLICKED != 0) or (event & curses.BUTTON3_PRESSED):
+                return self.stock_pile.uncheck_card()            
         return False
 
     def is_game_won(self):
@@ -214,3 +216,4 @@ class Desk:
             all(pile.is_empty() for pile in self.tableau_piles)
             and self.stock_pile.is_empty()
         )
+

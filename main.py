@@ -2,7 +2,7 @@ import curses
 import sys
 import logging
 
-from game import start_game
+from game import run
 
 
 ##################################################################
@@ -20,16 +20,16 @@ logging.basicConfig(
 
 logger = logging.getLogger()
 
-
 def main(window: curses.window):
     """Function running the program."""
     # Setup
     curses.mousemask(curses.ALL_MOUSE_EVENTS)
     curses.curs_set(0)  # Hide cursor
     window.clear()
+    window.erase()
 
     # Start the game flow
-    start_game(window)
+    run(window)
 
     # Clean exit
     window.clear()

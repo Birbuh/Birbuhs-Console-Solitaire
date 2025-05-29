@@ -32,7 +32,7 @@ def start_game(window: curses.window):
                 try:
                     _, mouse_x, mouse_y, _, _ = curses.getmouse()
                     if start_button.is_clicked(mouse_x, mouse_y):
-                        game(window)
+                        return
                 except curses.error:
                     # Sometimes getmouse can fail
                     pass
@@ -84,11 +84,11 @@ def game(window: curses.window):
                 running = False
             elif key == curses.KEY_MOUSE:  # mouse click
                 try:
-                    _, mouse_x, mouse_y, _, _ = curses.getmouse()  # get mouse pos
+                    _, mouse_x, mouse_y, _, event = curses.getmouse()  # get mouse pos
                     if restart_button.is_clicked(mouse_x, mouse_y):
                         # Restart the game through the loading screen (important)
-                        return game(window)
-                    if desk.on_click(mouse_x, mouse_y):
+                        return False
+                    if desk.on_click(mouse_x, mouse_y, event):
                         window.erase()
                         desk.draw()
                         restart_button.draw()
@@ -97,14 +97,18 @@ def game(window: curses.window):
         except Exception as e:
             logger.error(e, exc_info=True)
         if desk.is_game_won():
-            return game_won(window)
+            return True
         window.refresh()
         time.sleep(0.05)  # Prevent CPU hogging
 
 
-def game_won(window: curses.window):
+def game_finished(window: curses.window, won: bool):
     window.clear()
-    window.addstr("Congrats! You've won!")
+    
+    if won:
+        window.addstr("Congrats! You've won!")
+    else:
+        window.addstr("You lost, didn't ya?")        
 
     play_again_button = Button(10, 10, "Play again?", window)
     quit_button = Button(30, 10, "Quit :c", window)
@@ -119,6 +123,13 @@ def game_won(window: curses.window):
         if key == curses.KEY_MOUSE:
             _, mouse_x, mouse_y, _, _ = curses.getmouse()  # get mouse pos
             if play_again_button.is_clicked(mouse_x, mouse_y):
-                return game(window)
+                return False
             elif quit_button.is_clicked(mouse_x, mouse_y):
-                running = False
+                return True
+            
+def run(window):
+    start_game(window)
+    while True:
+        is_won = game(window)
+        if game_finished(window, is_won):
+            break

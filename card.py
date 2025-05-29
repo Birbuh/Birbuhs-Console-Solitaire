@@ -77,9 +77,6 @@ class Card:
         self.x = None
         self.y = None
 
-    def __del__(self):
-        logger.info(f"Usunięto object {self}")
-
     def draw(
         self,
         x: int = None,
@@ -88,7 +85,8 @@ class Card:
         turned: bool = False,
     ):
         """Draws the card"""
-        self.pile = pile
+        if not self.pile:
+            self.pile = pile
         self.turned = turned
         if x and y:
             self.x = x
@@ -147,11 +145,15 @@ class Card:
         # Draw card content
         if self.turned:
             card_symbol = self.get_symbol()
+            bottom_symbol_shift = 2
+            if len(card_symbol) > 2: 
+                bottom_symbol_shift = 3
+
             if self.color_check() == "black":
                 if not self.is_active:
                     self.window.addstr(self.y + 1, self.x + 1, card_symbol)
                     self.window.addstr(
-                        self.y + self.height - 1, self.x + self.width - 2, card_symbol
+                        self.y + self.height - 1, self.x + self.width - bottom_symbol_shift, card_symbol
                     )
                 else:
                     self.window.addstr(
@@ -159,7 +161,7 @@ class Card:
                     )
                     self.window.addstr(
                         self.y + self.height - 1,
-                        self.x + self.width - 2, # - self.move_num,
+                        self.x + self.width - bottom_symbol_shift, # - self.move_num,
                         card_symbol,
                         curses.color_pair(3),
                     )
@@ -170,7 +172,7 @@ class Card:
                     )
                     self.window.addstr(
                         self.y + self.height - 1,
-                        self.x + self.width - 2, # - self.move_num,
+                        self.x + self.width - bottom_symbol_shift, # - self.move_num,
                         card_symbol,
                         curses.color_pair(1),
                     )
@@ -180,7 +182,7 @@ class Card:
                     )
                     self.window.addstr(
                         self.y + self.height - 1,
-                        self.x + self.width - 2,
+                        self.x + self.width - bottom_symbol_shift,
                         card_symbol,
                         curses.color_pair(4),
                     )
@@ -328,4 +330,4 @@ class Card:
         return self.turned
 
     def __str__(self):
-        return f"Card: {self.color}, {self.num}"
+        return f"Card: {self.color}, {self.num}, {self.pile}"

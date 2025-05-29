@@ -10,7 +10,7 @@ The one and only requirement is Python interpreter and Linux OS. It doesn't work
 
 * CAUTION: If You click too fast, the screen might flash. Sorry about this problem, but I don't know how to fix it. If you know, please message me.
 
-# HOW TO PLAY:
+# HOW TO: Playing Solitaire (rules etc.):
 (this tutorial is fully copied from https://bicyclecards.com/how-to-play/solitaire)
 
 Many Solitaire games can be played on areas smaller than a card table. Others require a larger playing area, and these games are often played on the floor or on a bedspread. Alternatively, in order to play with large layouts on a card table, miniature playing cards are available. These are usually half the size of standard playing cards.
@@ -53,6 +53,8 @@ If a vacancy in the tableau is created by the removal of cards elsewhere it is c
 Continue to transfer cards in the tableau and bring cards into play from the stock pile until all the cards are built in suit sequences in the foundation piles to win!
 
 * Caution: in the code, there's NO SUCH THING AS WASTE PILE. It's a `turned_card_list` variable in the StockPile class.
+
+# HOW TO: Playing BCS:
 
 # FAQ:
 

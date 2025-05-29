@@ -20,7 +20,6 @@ class Pile:
         self.window: The window in which everything is drawn.
     """
 
-    turned_card_list: list[Card] | None = None
 
     def __init__(self):
         self.card_list: list[Card] = []
@@ -29,7 +28,8 @@ class Pile:
         self.width = 8
         self.height = 6
         self.window: curses.window = None
-
+        self.turned_card_list: list[Card] | None = None
+        
     def is_empty(self) -> bool:
         """Checking if the pile is empty."""
         if self.card_list:
@@ -229,7 +229,7 @@ class FoundationPile(Pile):
         return False
 
     # Method override
-    def can_move_from(self):
+    def can_move_from(self) -> bool:
         return True
 
 
@@ -286,13 +286,13 @@ class TableauPile(Pile):
                 return True
         return False
 
-    def iterate_and_activate(self, mouse_x, mouse_y) -> bool:
+    def iterate_and_activate(self, mouse_x, mouse_y) -> Card:
         for card in self.card_list:
             if card.is_clicked(mouse_x, mouse_y) and card.turned:
                 card.activate()
                 return card
 
-    def last_card_relative_y(self):
+    def last_card_relative_y(self) -> int:
         return self.card_list[-1].y - 9
 
     def reactivate_last_card(self):
@@ -379,7 +379,7 @@ class StockPile(Pile):
                 self.y + self.height, self.x + 10 + self.width, curses.ACS_LRCORNER
             )
 
-    def check_card(self):
+    def check_card(self) -> bool:
         """
         Turning the first (technically last) card of the stockpile.
         If card_list is empty, all turned cards will go back to the stock pile.
@@ -402,7 +402,16 @@ class StockPile(Pile):
                 return True
         return False
 
-    def is_turned_list_empty(self):
+    def uncheck_card(self) -> bool:
+        if self.turned_card_list:
+            card = self.turned_card_list[-1]
+            self.turned_card_list.remove(card)
+            self.card_list.append(card)
+            card.turn()
+            return True
+        return False
+    
+    def is_turned_list_empty(self) -> bool:
         return not self.turned_card_list
 
     def try_activate(self, mouse_x, mouse_y) -> Card:
@@ -414,5 +423,5 @@ class StockPile(Pile):
                 return card
         return None
 
-    def can_move_to(self):
+    def can_move_to(self) -> bool:
         return True
