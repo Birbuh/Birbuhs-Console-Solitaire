@@ -8,9 +8,49 @@ Then go to the folder it's in and launch `python main.py`.
 The one and only requirement is Python interpreter and Linux OS. It doesn't work for Windows rn, sorry.
 
 
-* CAUTION: If You click too fast, the screen might flash. Sorry about this problem, but I don't know how to fix it. If you know, please message me.
+* CAUTION: If You click too fast, the screen might flash. I'm sorry about this, but I don't have much time before I can post it to my competition, so I'll propably update that after the results will come.
 
-# HOW TO: Playing Solitaire (rules etc.):
+
+# HOW TO:
+
+## Installing
+
+To play Birbuh's Console Solitaire, You need to, as mentioned earlier, clone the repo or download it from zip file.
+Also, You need to be on Linux and have Python installed.
+No, this program currently doesn't support Windows.
+Next, **IN THE CONSOLE** go to the folder you unpacked/cloned it and run `python main.py`
+
+## Playing
+
+You should have the classic solitaire layout in the center. On the left, You should see a timer, a prompt to exit (press Q to do it), and the "click me if You lost" button.
+
+First comes the button.
+This button restarts the game and redirects You to the "You lost, didn't ya?" screen. Choose "Play again?" button to play again or "Quit :c" button to quit.
+
+The next is the timer.
+You cannot interact with it; the time will be shown at the end of the game, regardless of whether you lose or win.
+
+And, finally, let's go to the game itself.
+Left-click a card (with mouse) to activate it.
+Once it's activated, You can click other card. If it can move, it will move. 
+***BUT***
+The cards have to meet the requirements to do it. More in the next part, called *Playing Solitaire (rules etc.)*
+
+So, let's say a bit about the behaviour of the piles:
+
+1. The Tableau.
+  This is the easiest: left click on the first one, left click on the second one.
+  The cards can move in and out.
+
+2. Foundation Piles.
+   This is a little bit more complicated. The cards can move in, can't move out. Make one of the cards active and then left-click the right pile.
+
+3. The Stock Pile.
+   This is the last one. Cards can only move out. To show next card, left-click the covered side. If you want to go back, right-click the same side of the pile.
+
+* CAUTION: If the covered side of the Stock Pile is empty and you left-click on it, the cards will reset. However, if the uncovered (turned) side will be empty and You right-click the covered side, nothing will happen 😱
+  
+## Playing Solitaire (rules etc.):
 (this tutorial is fully copied from https://bicyclecards.com/how-to-play/solitaire)
 
 Many Solitaire games can be played on areas smaller than a card table. Others require a larger playing area, and these games are often played on the floor or on a bedspread. Alternatively, in order to play with large layouts on a card table, miniature playing cards are available. These are usually half the size of standard playing cards.
@@ -54,8 +94,6 @@ Continue to transfer cards in the tableau and bring cards into play from the sto
 
 * Caution: in the code, there's NO SUCH THING AS WASTE PILE. It's a `turned_card_list` variable in the StockPile class.
 
-# HOW TO: Playing BCS:
-
 # FAQ:
 
 1. When the card is activated?
@@ -64,7 +102,13 @@ Continue to transfer cards in the tableau and bring cards into play from the sto
 2. Why I can't put my Ace to one of the Foundations Piles?
  - Make sure that You were putting it to the right one - it has to match the symbols! If the problem continues, follow step 4.
 
-
-4. What if my problem isn't covered here?
+3. What if my problem isn't covered here?
  - Message me on Discord (username: birbuh; id: 1058415231820382278) or just report in on GitHub (https://github.com/Birbuh/Birbuhs-Console-Solitaire/issues). 
 
+
+
+# Additional information:
+
+- By Franciszek Foltyński for Gigathon Competition 2nd Stage 2025.
+
+- Won't be doing anything till the Gigathon IInd Stage results will come.# Birbuh's Console Solitaire

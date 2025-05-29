@@ -153,9 +153,14 @@ class Desk:
             return False
 
         for pile in self.foundation_piles:  # Checking for click in foundation piles
-            if (self.active_card_pile.is_last_card(self.active_card) and self.active_card.return_pile() == 'TABLEAU') or self.active_card.return_pile() == 'STOCK':
+            if (
+                self.active_card_pile.is_last_card(self.active_card)
+                and self.active_card.return_pile() == "TABLEAU"
+            ) or self.active_card.return_pile() == "STOCK":
                 if pile.is_clicked(self.mouse_x, self.mouse_y):
-                    if pile.can_move(self.active_card):  # Move the card if it's possible
+                    if pile.can_move(
+                        self.active_card
+                    ):  # Move the card if it's possible
                         self.active_card_pile.move_to()
                         pile.move_from_other_pile(self.active_card)
                         self.active_card.change_piles(CardPileEnum.FOUNDATIONS)
@@ -205,10 +210,14 @@ class Desk:
 
     def check_stockpile(self, event):
         if self.stock_pile.is_clicked(self.mouse_x, self.mouse_y):
-            if (event & curses.BUTTON1_CLICKED != 0) or (event & curses.BUTTON1_PRESSED) != 0:
+            if (event & curses.BUTTON1_CLICKED != 0) or (
+                event & curses.BUTTON1_PRESSED
+            ) != 0:
                 return self.stock_pile.check_card()
-            elif (event & curses.BUTTON3_CLICKED != 0) or (event & curses.BUTTON3_PRESSED):
-                return self.stock_pile.uncheck_card()            
+            elif (event & curses.BUTTON3_CLICKED != 0) or (
+                event & curses.BUTTON3_PRESSED
+            ):
+                return self.stock_pile.uncheck_card()
         return False
 
     def is_game_won(self):
@@ -216,4 +225,3 @@ class Desk:
             all(pile.is_empty() for pile in self.tableau_piles)
             and self.stock_pile.is_empty()
         )
-

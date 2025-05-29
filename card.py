@@ -1,5 +1,6 @@
 import curses
 import logging
+
 from enum import Enum
 
 
@@ -146,14 +147,16 @@ class Card:
         if self.turned:
             card_symbol = self.get_symbol()
             bottom_symbol_shift = 2
-            if len(card_symbol) > 2: 
+            if len(card_symbol) > 2:
                 bottom_symbol_shift = 3
 
             if self.color_check() == "black":
                 if not self.is_active:
                     self.window.addstr(self.y + 1, self.x + 1, card_symbol)
                     self.window.addstr(
-                        self.y + self.height - 1, self.x + self.width - bottom_symbol_shift, card_symbol
+                        self.y + self.height - 1,
+                        self.x + self.width - bottom_symbol_shift,
+                        card_symbol,
                     )
                 else:
                     self.window.addstr(
@@ -161,7 +164,7 @@ class Card:
                     )
                     self.window.addstr(
                         self.y + self.height - 1,
-                        self.x + self.width - bottom_symbol_shift, # - self.move_num,
+                        self.x + self.width - bottom_symbol_shift,  # - self.move_num,
                         card_symbol,
                         curses.color_pair(3),
                     )
@@ -172,7 +175,7 @@ class Card:
                     )
                     self.window.addstr(
                         self.y + self.height - 1,
-                        self.x + self.width - bottom_symbol_shift, # - self.move_num,
+                        self.x + self.width - bottom_symbol_shift,  # - self.move_num,
                         card_symbol,
                         curses.color_pair(1),
                     )
@@ -228,7 +231,6 @@ class Card:
             # self.move_num = 1
         else:
             num_symbol = str(self.num.value)
-
 
         # Card suit representation
         if self.color == CardColorEnum.HEARTS:

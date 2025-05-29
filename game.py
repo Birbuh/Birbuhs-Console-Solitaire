@@ -54,7 +54,7 @@ def game(window: curses.window):
     window.nodelay(True)
     curses.start_color()
     # Create and draw restart button
-    restart_button = Button(10, 20, "restart the game", window)
+    restart_button = Button(10, 20, "Click me if You lost.", window)
     restart_button.draw()
 
     desk = Desk(window)
@@ -72,11 +72,11 @@ def game(window: curses.window):
 
     while running:  # EVENT LOOP
         # Show time
-        elapsed_mins = (time.time() - start_time) / 60
+        elapsed_time = (time.time() - start_time) / 60
         window.addstr(
             13,
             7,
-            f"your time: {int(elapsed_mins)} minutes {int((elapsed_mins % 1) * 60)} seconds",
+            f"your time: {int(elapsed_time)} minutes {int((elapsed_time % 1) * 60)} seconds",
         )
         try:
             key = window.getch()  # Checking for input
@@ -87,7 +87,7 @@ def game(window: curses.window):
                     _, mouse_x, mouse_y, _, event = curses.getmouse()  # get mouse pos
                     if restart_button.is_clicked(mouse_x, mouse_y):
                         # Restart the game through the loading screen (important)
-                        return False
+                        return False, elapsed_time
                     if desk.on_click(mouse_x, mouse_y, event):
                         window.erase()
                         desk.draw()
@@ -97,21 +97,26 @@ def game(window: curses.window):
         except Exception as e:
             logger.error(e, exc_info=True)
         if desk.is_game_won():
-            return True
+            return True, elapsed_time
         window.refresh()
         time.sleep(0.05)  # Prevent CPU hogging
 
 
-def game_finished(window: curses.window, won: bool):
+def game_finished(window: curses.window, won: bool, elapsed_time):
     window.clear()
-    
+
     if won:
-        window.addstr("Congrats! You've won!")
+        window.addstr(4, 1, "Congrats! You've won!")
     else:
-        window.addstr("You lost, didn't ya?")        
+        window.addstr(4, 1, "You lost, didn't ya?")
 
     play_again_button = Button(10, 10, "Play again?", window)
     quit_button = Button(30, 10, "Quit :c", window)
+    window.addstr(
+        5,
+        1,
+        f"your time: {int(elapsed_time)} minutes {int((elapsed_time % 1) * 60)} seconds",
+    )
 
     play_again_button.draw()
     quit_button.draw()
@@ -126,10 +131,11 @@ def game_finished(window: curses.window, won: bool):
                 return False
             elif quit_button.is_clicked(mouse_x, mouse_y):
                 return True
-            
+
+
 def run(window):
     start_game(window)
     while True:
-        is_won = game(window)
-        if game_finished(window, is_won):
+        is_won, elapsed_time = game(window)
+        if game_finished(window, is_won, elapsed_time):
             break

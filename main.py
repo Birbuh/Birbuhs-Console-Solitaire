@@ -1,6 +1,7 @@
 import curses
 import sys
 import logging
+import time
 
 from game import run
 
@@ -20,6 +21,7 @@ logging.basicConfig(
 
 logger = logging.getLogger()
 
+
 def main(window: curses.window):
     """Function running the program."""
     # Setup
@@ -33,10 +35,10 @@ def main(window: curses.window):
 
     # Clean exit
     window.clear()
-    window.addstr(10, 10, "Thanks for playing! Press any key to exit.")
+    window.addstr(10, 10, "Thanks for playing! The program will close soon.")
     window.nodelay(False)  # Switch back to blocking mode for final input
     window.refresh()
-    window.getch()
+    time.sleep(3)
 
 
 if __name__ == "__main__":  # The program's called here

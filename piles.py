@@ -20,7 +20,6 @@ class Pile:
         self.window: The window in which everything is drawn.
     """
 
-
     def __init__(self):
         self.card_list: list[Card] = []
         self.x = None
@@ -29,7 +28,7 @@ class Pile:
         self.height = 6
         self.window: curses.window = None
         self.turned_card_list: list[Card] | None = None
-        
+
     def is_empty(self) -> bool:
         """Checking if the pile is empty."""
         if self.card_list:
@@ -410,7 +409,7 @@ class StockPile(Pile):
             card.turn()
             return True
         return False
-    
+
     def is_turned_list_empty(self) -> bool:
         return not self.turned_card_list
 
