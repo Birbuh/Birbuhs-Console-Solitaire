@@ -5,7 +5,7 @@ BCS is a light-weight solitaire written fully in python (ncurses library).
 To play, just clone the repo or download the zip.
 Then go to the folder it's in and launch `python main.py`. 
 
-The one and only requirement is Python interpreter and Linux OS. It doesn't work for Windows rn, sorry.
+The one and only requirement is Python interpreter and Linux OS. It doesn't work for Windows right now, sorry.
 
 
 * CAUTION: If You click too fast, the screen might flash. I'm sorry about this, but I don't have much time before I can post it to my competition, so I'll propably update that after the results will come.
@@ -111,4 +111,4 @@ Continue to transfer cards in the tableau and bring cards into play from the sto
 
 - By Franciszek Foltyński for Gigathon Competition 2nd Stage 2025.
 
-- Won't be doing anything till the Gigathon IInd Stage results will come.# Birbuh's Console Solitaire
+- Won't be doing anything untill the Gigathon 2nd Stage results come.
