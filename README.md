@@ -13,7 +13,7 @@ The one and only requirement is Python interpreter and Linux OS. It doesn't work
 
 # HOW TO:
 
-## Installing
+## Installing and running
 
 To play Birbuh's Console Solitaire, You need to, as mentioned earlier, clone the repo or download it from zip file.
 Also, You need to be on Linux and have Python installed.
